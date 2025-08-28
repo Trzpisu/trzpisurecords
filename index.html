@@ -137,6 +137,50 @@
   border-top: 2px solid rgba(255,255,255,0.3);
   border-bottom: 2px solid rgba(255,255,255,0.3);
 }
+   .neon-header {
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-shadow:
+    0 0 5px #ff0000,
+    0 0 10px #ff3333,
+    0 0 20px #ff3333,
+    0 0 40px #ff0000;
+  animation: neonBlink 1.8s infinite alternate;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+@keyframes neonBlink {
+  from {
+    text-shadow:
+      0 0 5px #ff0000,
+      0 0 10px #ff3333;
+  }
+  to {
+    text-shadow:
+      0 0 10px #ff0000,
+      0 0 20px #ff3333,
+      0 0 40px #ff0000;
+  }
+} 
+    .fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInMove 1s forwards;
+}
+
+.fade-in.delay-1 {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInMove {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   </style>
 </head>
 <body>
@@ -151,12 +195,14 @@
     <a href="https://tiktok.com/@trzpisu.records" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
   </div>
 
-  <header>TO JEST ZIOM !!</header>
-
+  <header class="neon-header">TO JEST ZIOM !!!</header>
+  
   <main>
     <section class="parallax"></section>
-
-    <p>SOON</p>
+    
+<h2 class="fade-in">TRZPISU</h2>
+  <p class="fade-in delay-1">SOON!</p>
+    
   </main>
 
   <section class="parallax"></section>
