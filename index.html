@@ -1,94 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
-  <head>
-<meta charset="utf-8">
-<title>TRZPISU'S OFFICIAL WEBSITE</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <style>
-    .social-icons a {
-      margin: 0 10px;
-      font-size: 24px;
-      color: #333;
-      text-decoration: none;
-      transition: color 0.3s;
- body { font-family: Arial, sans-serif; text-align:
- center; margin: Srem; }
-  h1 {color: #ffcc00; }
- </style>
-    </head>
-  
- <body>
-  <h1> TO JEST ZIOM !!!
-
-   
-  <p> SOON ... </p>
-
-   
-  
-    <h2>SURFUJ PO NECIE</h2>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRZPISU'S OFFICIAL WEBSITE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-  .social-icon {
-    font-size: 70px; 
-    margin-right: 10px; 
-  }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  .social-button {
-    display: inline-block;
-    padding: 15px;
-    background-color: #3b5998;
-    color: white;
-    border-radius: 8px;
-    margin-right
-  }
-  
-      </style>
-    
-    <p>LINKI</p>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    
-    <ul>
-      <div style="display: flex; gap: 20px; font-size: 48px;">
-  <a href="https://facebook.com/twojprofil" target="_blank" aria-label="Facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-  <a href="https://x.com/trzpisu4records" target="_blank" aria-label="X">
-    <i class="fab fa-X"></i>
-  </a>
-  <a href="https://instagram.com/trzpisu.records/" target="_blank" aria-label="Instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <a href="https://youtube.com/@trzpisu.records" target="_blank" aria-label="YouTube">
-    <i class="fab fa-youtube"></i>
-  </a>
-  <a href="https://spotify.com" target="_blank" aria-label="Spotify">
-    <i class="fab fa-spotify"></i>
-  </a>
-  <a href="https://on.soundcloud.com/OHVJPhq5q2oXRJFPfq" target="_blank" aria-label="SoundCloud">
-    <i class="fab fa-soundcloud"></i>
-   </a>
-  <a href="https://www.tiktok.com/@trzpisu.records" target="_blank" aria-label="TikTok">
-    <i class="fab fa-tiktok"></i>
-   </a>
-        </div>
-        </ul>
-     <style>
-body {
-    background-color: red;
-    margin: 20px;
-    font-family: Arial, sans-serif;
-    border: 5px solid black;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-h1, h2, h3 {
-    border: 2px dashed white;
-    padding: 10px;
-    background-color: rgba(255,255,255,0.2);
-    border-radius: 8px;
-}
+    body {
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      background: linear-gradient(-45deg, #ff0000, #8b0000, #ff3333, #660000);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 100px;
+    }
 
-      </style>
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333, 0 0 30px #ff0000;
+      animation: neonGlow 2s infinite alternate;
+    }
+
+    @keyframes neonGlow {
+      from {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+      }
+      to {
+        text-shadow: 0 0 20px #ff3333, 0 0 30px #ff0000;
+      }
+    }
+
+    main {
+      text-align: center;
+      max-width: 800px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    main p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    .social-menu {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 0 10px 10px 0;
+      width: 60px;
+      transition: width 0.3s ease;
+      overflow: hidden;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .social-menu:hover {
+      width: 220px;
+    }
+
+    .social-menu a {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-size: 1.5em;
+      padding: 10px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .social-menu a i {
+      margin-right: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-menu:hover a i {
+      transform: scale(1.2);
+    }
+
+    .social-menu a::after {
+      content: attr(aria-label);
+      color: #fff;
+      margin-left: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: translateX(-10px);
+      white-space: nowrap;
+    }
+
+    .social-menu:hover a::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 0.9em;
+      opacity: 0.6;
+    }
+
+    parallax {
+  background-image: url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1950&q=80'); /* możesz zmienić link */
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 2px solid rgba(255,255,255,0.3);
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+  </style>
+</head>
+<body>
+
+  <div class="social-menu">
+    <a href="https://facebook.com/twojprofil" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://x.com/trzpisu4records" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://instagram.com/trzpisu.records/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@trzpisu.records" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://spotify.com/twojprofil" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+    <a href="https://soundcloud.com/OHVJPhq5q2oXRJFPfq" target="_blank" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+    <a href="https://tiktok.com/@trzpisu.records" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
+
+  <header>TO JEST ZIOM !!</header>
+
+  <main>
+    <section class="parallax"></section>
+
+    <p>SOON</p>
+  </main>
+
+  <section class="parallax"></section>
+
+  <footer>
+    &copy; 2025 TRZPISU. Wszelkie prawa zastrzeżone.
+  </footer>
+
 </body>
-  
 </html>
