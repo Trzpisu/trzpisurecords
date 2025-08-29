@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TRZPISU'S OFFICIAL WEBSITE</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -14,9 +17,9 @@
 
     body {
       height: 100vh;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Press Start 2P', monospace;
       color: #fff;
-      background: linear-gradient(-45deg, #ff0000, #8b0000, #ff3333, #660000);
+      background: linear-gradient(-45deg, #ff2bd3, #7d00ff, #ff0080, #00fff7);
       background-size: 400% 400%;
       animation: gradientBG 10s ease infinite;
       display: flex;
@@ -33,35 +36,30 @@
     }
 
     header {
-      font-size: 3em;
-      font-weight: bold;
+      font-size: 2em;
       text-align: center;
       margin-bottom: 30px;
-      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333, 0 0 30px #ff0000;
+      text-shadow: 0 0 5px #ff2bd3, 0 0 10px #00fff7;
       animation: neonGlow 2s infinite alternate;
     }
 
     @keyframes neonGlow {
       from {
-        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+        text-shadow: 0 0 5px #ff2bd3, 0 0 10px #ff2bd3;
       }
       to {
-        text-shadow: 0 0 20px #ff3333, 0 0 30px #ff0000;
+        text-shadow: 0 0 20px #00fff7, 0 0 30px #ff2bd3;
       }
     }
 
-    main {
-      text-align: center;
-      max-width: 800px;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.3);
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    .crt {
+      text-shadow: 0 0 2px #0ff, 0 0 5px #f0f, 0 0 10px #0ff;
+      animation: flicker 0.15s infinite alternate;
     }
 
-    main p {
-      font-size: 1.2em;
-      line-height: 1.6;
+    @keyframes flicker {
+      0% { opacity: 0.95; }
+      100% { opacity: 1; }
     }
 
     .social-menu {
@@ -89,11 +87,10 @@
       display: flex;
       align-items: center;
       color: #fff;
-      font-size: 1.5em;
+      font-size: 1.2em;
       padding: 10px;
       transition: all 0.3s ease;
       text-decoration: none;
-      position: relative;
     }
 
     .social-menu a i {
@@ -120,67 +117,96 @@
       transform: translateX(0);
     }
 
+    .parallax {
+      background-image: url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1950&q=80');
+      min-height: 400px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      margin: 40px 0;
+      border-top: 2px solid rgba(255,255,255,0.3);
+      border-bottom: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInMove 1s forwards;
+    }
+
+    .fade-in.delay-1 {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fadeInMove {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .project-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .project {
+      background-color: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: scale(1.05);
+    }
+
+    .glow-border {
+      border: 2px solid transparent;
+      border-image: linear-gradient(to right, #ff00cc, #3333ff);
+      border-image-slice: 1;
+      box-shadow: 0 0 10px #ff00cc, 0 0 20px #3333ff;
+    }
+
     footer {
       margin-top: 50px;
       text-align: center;
-      font-size: 0.9em;
+      font-size: 0.6em;
       opacity: 0.6;
     }
 
-    parallax {
-  background-image: url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1950&q=80'); /* możesz zmienić link */
-  min-height: 400px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-top: 2px solid rgba(255,255,255,0.3);
-  border-bottom: 2px solid rgba(255,255,255,0.3);
-}
-   .neon-header {
-  font-size: 3.5em;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  text-shadow:
-    0 0 5px #ff0000,
-    0 0 10px #ff3333,
-    0 0 20px #ff3333,
-    0 0 40px #ff0000;
-  animation: neonBlink 1.8s infinite alternate;
-  letter-spacing: 2px;
-  margin-bottom: 40px;
-}
+    .retro-button {
+      font-family: 'Press Start 2P', monospace;
+      background: linear-gradient(to right, #ff2bd3, #00fff7);
+      border: 2px solid #fff;
+      color: black;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      box-shadow: 0 0 10px #ff2bd3, 0 0 20px #00fff7;
+      transition: 0.3s;
+      cursor: pointer;
+    }
 
-@keyframes neonBlink {
-  from {
-    text-shadow:
-      0 0 5px #ff0000,
-      0 0 10px #ff3333;
-  }
-  to {
-    text-shadow:
-      0 0 10px #ff0000,
-      0 0 20px #ff3333,
-      0 0 40px #ff0000;
-  }
-} 
-    .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInMove 1s forwards;
-}
+    .retro-button:hover {
+      background: black;
+      color: #ff2bd3;
+      box-shadow: 0 0 30px #00fff7;
+    }
 
-.fade-in.delay-1 {
-  animation-delay: 0.5s;
-}
-
-@keyframes fadeInMove {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    @media (max-width: 768px) {
+      .social-menu:hover {
+        width: 100px;
+      }
+      .retro-button {
+        font-size: 0.5em;
+      }
+    }
   </style>
 </head>
 <body>
