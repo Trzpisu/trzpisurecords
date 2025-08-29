@@ -238,13 +238,25 @@
     opacity: 1;
   }
 }
+    #video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.3);
+}
   </style>
 </head>
 
 
   
 <body>
-
+<video autoplay muted loop id="video-background">
+  <source src="202508291429.mp4" type="video/mp4">
+</video>
 <div class="social-menu">
     <a href="https://facebook.com/twojprofil" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
      <a href="https://x.com/trzpisu4records/" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
