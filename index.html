@@ -95,6 +95,22 @@ h1 {
   letter-spacing: 2px;
   animation: neonGlow 2s infinite alternate;
 }
+    @keyframes neonGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 5px #ff0000,
+      0 0 10px #ff0000,
+      0 0 20px #ff3333,
+      0 0 40px #ff3333;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #ff0000,
+      0 0 20px #ff0000,
+      0 0 30px #ff3333,
+      0 0 50px #ff3333;
+  }
+}
 
     .social-menu {
       position: fixed;
