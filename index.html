@@ -81,37 +81,34 @@ header {
   100% { opacity: 1; }
 }
     
-h1 {
-  color: #00ff00;
-  font-size: 4.5em;
-  font-weight: 700;
-  margin-bottom: 30px;
-  color: #ff0000; 
-  text-shadow:
-    0 0 5px #ff0000,
-    0 0 10px #ff0000,
-    0 0 20px #ff3333,
-    0 0 40px #ff3333; 
-  font-family: 'Orbitron', sans-serif;
-  letter-spacing: 2px;
-  animation: neonGlow 2s infinite alternate;
-}
-    @keyframes neonGlow {
-  0%, 100% {
+color: #ff0000 !important;
+    font-size: 4.5em;
+    font-weight: 700;
+    margin-bottom: 30px;
     text-shadow:
       0 0 5px #ff0000,
       0 0 10px #ff0000,
       0 0 20px #ff3333,
       0 0 40px #ff3333;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    animation: neonGlow 2s infinite alternate;
   }
-  50% {
-    text-shadow:
-      0 0 10px #ff0000,
-      0 0 20px #ff0000,
-      0 0 30px #ff3333,
-      0 0 50px #ff3333;
-  }
-}
+
+  @keyframes neonGlow {
+    0%, 100% {
+      text-shadow:
+        0 0 5px #ff0000,
+        0 0 10px #ff0000,
+        0 0 20px #ff3333,
+        0 0 40px #ff3333;
+    }
+    50% {
+      text-shadow:
+        0 0 10px #ff0000,
+        0 0 20px #ff0000,
+        0 0 30px #ff3333,
+        0 0 50px #ff3333;
 
     .social-menu {
       position: fixed;
