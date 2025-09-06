@@ -8,7 +8,7 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
  
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -37,33 +37,50 @@
       100% { background-position: 0% 50%; }
     }
 
-    header {
-      font-size: 2em;
-      text-align: center;
-      margin-bottom: 30px;
-      color: #ff0000;
-      text-shadow: 0 0 5px #ff0000, 0 0 10px #00ff00;
-      animation: neonGlow 2s infinite alternate;
-    }
 
-    @keyframes neonGlow {
-      from {
-        text-shadow: 0 0 5px #ff0000, 0 0 10px #00ff00;
-      }
-      to {
-        text-shadow: 0 0 20px #00ff00, 0 0 30px #ff0000;
-      }
-    }
+header {
+  font-size: 4em; 
+  text-align: center;
+  margin-bottom: 40px;
+  color: #39ff14; 
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #00ffcc,
+    0 0 40px #00ffcc;
+  animation: neonGlow 2s infinite alternate;
+  font-family: 'Orbitron', sans-serif; 
+  letter-spacing: 2px;
+}
 
-    .crt {
-      text-shadow: 0 0 2px #0f0, 0 0 5px #f00, 0 0 10px #0f0;
-      animation: flicker 0.15s infinite alternate;
-    }
 
-    @keyframes flicker {
-      0% { opacity: 0.95; }
-      100% { opacity: 1; }
-    }
+@keyframes neonGlow {
+  from {
+    text-shadow:
+      0 0 5px #39ff14,
+      0 0 10px #00ffcc;
+  }
+  to {
+    text-shadow:
+      0 0 20px #00ffcc,
+      0 0 40px #39ff14;
+  }
+}
+
+.crt {
+  text-shadow:
+    0 0 2px #0f0,
+    0 0 5px #f00,
+    0 0 10px #0f0;
+  animation: flicker 0.15s infinite alternate;
+}
+
+
+@keyframes flicker {
+  0% { opacity: 0.93; }
+  100% { opacity: 1; }
+}
+
 
     .social-menu {
       position: fixed;
