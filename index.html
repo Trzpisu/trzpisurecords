@@ -9,30 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      height: 100vh;
       font-family: 'Press Start 2P', monospace;
       color: #00ff00;
-      background: linear-gradient(-45deg, #330000, #660000, #003300, #006600);
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
+      background-color: #0e0e0e;
+      text-align: center;
       padding-top: 100px;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      overflow-x: hidden;
     }
 
     header {
@@ -51,149 +36,12 @@
     }
 
     @keyframes neonGlow {
-      from {
-        text-shadow:
-          0 0 5px #39ff14,
-          0 0 10px #00ffcc;
-      }
-      to {
-        text-shadow:
-          0 0 20px #00ffcc,
-          0 0 40px #39ff14;
-      }
+      from { text-shadow: 0 0 5px #39ff14, 0 0 10px #00ffcc; }
+      to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #39ff14; }
     }
 
-    .crt {
-      text-shadow:
-        0 0 2px #0f0,
-        0 0 5px #f00,
-        0 0 10px #0f0;
-      animation: flicker 0.15s infinite alternate;
-    }
-
-    @keyframes flicker {
-      0% { opacity: 0.93; }
-      100% { opacity: 1; }
-    }
-
-    h1 {
-      color: #ff0000 !important;
-      font-size: 4.5em;
-      font-weight: 700;
-      margin-bottom: 30px;
-      text-shadow:
-        0 0 5px #ff0000,
-        0 0 10px #ff0000,
-        0 0 20px #ff3333,
-        0 0 40px #ff3333;
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 2px;
-      animation: neonGlow 2s infinite alternate;
-    }
-
-    @keyframes neonGlow {
-      0%, 100% {
-        text-shadow:
-          0 0 5px #ff0000,
-          0 0 10px #ff0000,
-          0 0 20px #ff3333,
-          0 0 40px #ff3333;
-      }
-      50% {
-        text-shadow:
-          0 0 10px #ff0000,
-          0 0 20px #ff0000,
-          0 0 30px #ff3333,
-          0 0 50px #ff3333;
-      }
-    } 
-
-    .social-menu {
-      position: fixed;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.6);
-      padding: 10px;
-      border-radius: 0 10px 10px 0;
-      width: 60px;
-      transition: width 0.3s ease;
-      overflow: hidden;
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .social-menu:hover {
-      width: 280px;
-    }
-
-    .social-menu a {
-      display: flex;
-      align-items: center;
-      color: #00ff00;
-      font-size: 1.2em;
-      padding: 10px;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    }
-
-    .social-menu a i {
-      margin-right: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .social-menu:hover a i {
-      transform: scale(1.2);
-    }
-
-    .social-menu a::after {
-      content: attr(aria-label);
-      color: #00ff00;
-      margin-left: 10px;
-      opacity: 0;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      transform: translateX(-10px);
-      white-space: nowrap;
-    }
-
-    .social-menu:hover a::after {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .parallax {
-      position: relative;
-      width: 100vw;
-      height: 120vh;
-      display: flex;
-      justify-content: center; 
-      align-items: center;     
-      background-image: url('strona-internetowa.png'); 
-      background-size: 110%;
-      background-position: center;
-      background-repeat: no-repeat;
-      border-top: 2px solid rgba(255, 0, 0, 0.3);
-      border-bottom: 2px solid rgba(0, 255, 0, 0.3);
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInMove 1s forwards;
-    }
-
-    .fade-in.delay-1 {
-      animation-delay: 0.5s;
-    }
-
-    @keyframes fadeInMove {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInMove 1s forwards; }
+    @keyframes fadeInMove { to { opacity: 1; transform: translateY(0); } }
 
     .retro-button {
       font-family: 'Press Start 2P', monospace;
@@ -214,34 +62,122 @@
       box-shadow: 0 0 30px #ff0000;
     }
 
-    @media (max-width: 768px) {
-      .social-menu:hover {
-        width: 100px;
-      }
-      .retro-button {
-        font-size: 0.5em;
-      }
+    .social-menu {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 0 10px 10px 0;
+      width: 60px;
+      transition: width 0.3s ease;
+      overflow: hidden;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .social-menu:hover { width: 280px; }
+
+    .social-menu a {
+      display: flex;
+      align-items: center;
+      color: #00ff00;
+      font-size: 1.2em;
+      padding: 10px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-menu a i { margin-right: 10px; transition: transform 0.3s ease; }
+    .social-menu:hover a i { transform: scale(1.2); }
+    .social-menu a::after {
+      content: attr(aria-label);
+      color: #00ff00;
+      margin-left: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: translateX(-10px);
+      white-space: nowrap;
+    }
+    .social-menu:hover a::after { opacity: 1; transform: translateX(0); }
+
+    .parallax {
+      position: relative;
+      width: 100vw;
+      height: 120vh;
+      background-image: url('strona-internetowa.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-top: 2px solid rgba(255,0,0,0.3);
+      border-bottom: 2px solid rgba(0,255,0,0.3);
     }
 
     #film-section {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.95);
       display: none;
-      padding: 80px 20px;
-      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+      overflow-y: auto;
     }
 
-    footer {
-      margin-top: 50px;
-      text-align: center;
-      font-size: 0.6em;
-      opacity: 0.6;
+    #film-section iframe {
+      width: 90%;
+      height: 70vh;
+      max-width: 1200px;
     }
+
+    #film-section h2 {
+      margin-bottom: 20px;
+      font-size: 3em;
+      color: #ff0000;
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333;
+    }
+
+    #film-section .retro-button {
+      margin: 15px 0;
+    }
+
+    footer { margin-top: 50px; text-align: center; font-size: 0.6em; opacity: 0.6; }
+
+    .contact-item { position: relative; cursor: pointer; display: inline-block; margin: 20px;}
+    .contact-item img { width: 70px; height: 70px; transition: transform 0.3s ease; }
+    .contact-item:hover img { transform: scale(1.2) rotate(3deg); }
+    .contact-info {
+      display: block;
+      opacity: 0;
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background: #222;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      white-space: nowrap;
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      font-weight: 400;
+    }
+    .contact-item:hover .contact-info { opacity: 1; transform: translateX(-50%) translateY(0); }
 
   </style>
 </head>
 
 <body>
 
-  <nav style="display:flex; gap:20px; font-size:24px;">
+  <nav>
     <div class="social-menu">
       <a href="https://www.facebook.com/profile.php?id=61580169443672&sk=about_contact_and_basic_info" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       <a href="https://x.com/trzpisu4records/" target="_blank" aria-label="X (Twitter)"><i class="fa-solid fa-arrow-right"></i></a>
@@ -267,30 +203,15 @@
 
   <section class="parallax"></section>
 
+  <!-- SEKcja FILMU -->
   <section id="film-section">
     <h2>NOWY KLIP</h2>
 
-    <div style="position:relative;padding-bottom:56.25%;height:0;max-width:900px;margin:auto;">
-      <iframe
-        src="https://www.youtube.com/embed/lZminZV7H1w"
-        style="position:absolute;top:0;left:0;width:100%;height:100%;"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <iframe src="https://www.youtube.com/embed/lZminZV7H1w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-    <br>
+    <a href="https://youtu.be/lZminZV7H1w" target="_blank" class="retro-button">OGLĄDAJ NA YOUTUBE</a>
 
-    <a href="https://youtu.be/lZminZV7H1w" target="_blank" class="retro-button">
-      OGLĄDAJ NA YOUTUBE
-    </a>
-
-    <br><br>
-
-    <button class="retro-button" onclick="hideFilm()">
-      ZAMKNIJ
-    </button>
+    <button class="retro-button" onclick="hideFilm()">ZAMKNIJ</button>
   </section>
 
   <h3>CONTACT:</h3>
@@ -306,17 +227,12 @@
 
   <script>
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        document.body.classList.add('scrolled');
-      } else {
-        document.body.classList.remove('scrolled');
-      }
+      if (window.scrollY > 50) { document.body.classList.add('scrolled'); }
+      else { document.body.classList.remove('scrolled'); }
     });
 
     function showFilm() {
-      const section = document.getElementById("film-section");
-      section.style.display = "block";
-      section.scrollIntoView({ behavior: "smooth" });
+      document.getElementById("film-section").style.display = "flex";
     }
 
     function hideFilm() {
