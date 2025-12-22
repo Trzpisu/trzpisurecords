@@ -1,170 +1,219 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TRZPISU'S OFFICIAL WEBSITE</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TRZPISU'S OFFICIAL WEBSITE</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      font-family: 'Press Start 2P', monospace;
-      color: #00ff00;
-      text-align: center;
-      padding-top: 100px;
-      overflow-x: hidden;
-      background-color: #0e0e0e;
-    }
+  body {
+    font-family: 'Press Start 2P', monospace;
+    color: #00ff00;
+    text-align: center;
+    padding-top: 100px;
+    background-color: #0e0e0e;
+    overflow-x: hidden;
+  }
 
-    header {
-      font-size: 4em; 
-      text-align: center;
-      margin-bottom: 40px;
-      color: #39ff14; 
-      text-shadow:
-        0 0 5px #39ff14,
-        0 0 10px #39ff14,
-        0 0 20px #00ffcc,
-        0 0 40px #00ffcc;
-      animation: neonGlow 2s infinite alternate;
-      font-family: 'Orbitron', sans-serif; 
-      letter-spacing: 2px;
-      z-index: 5;
-      position: relative;
-    }
+  header {
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #39ff14;
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+    animation: neonGlow 2s infinite alternate;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+  }
 
-    @keyframes neonGlow {
-      from { text-shadow: 0 0 5px #39ff14, 0 0 10px #00ffcc; }
-      to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #39ff14; }
-    }
+  @keyframes neonGlow {
+    from { text-shadow: 0 0 5px #39ff14, 0 0 10px #00ffcc; }
+    to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #39ff14; }
+  }
 
-    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInMove 1s forwards; }
-    @keyframes fadeInMove { to { opacity: 1; transform: translateY(0); } }
+  .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInMove 1s forwards; }
+  @keyframes fadeInMove { to { opacity: 1; transform: translateY(0); } }
 
-    /* PRZYCISK DUŻY */
-    .retro-button {
-      font-family: 'Press Start 2P', monospace;
-      background: linear-gradient(to right, #ff0000, #00ff00);
-      border: 2px solid #fff;
-      color: black;
-      padding: 30px 60px;
-      font-size: 1.3em;
-      text-transform: uppercase;
-      box-shadow: 0 0 20px #ff0000, 0 0 30px #00ff00;
-      transition: 0.3s;
-      cursor: pointer;
-      margin: 20px 0;
-      z-index: 5;
-      position: relative;
-    }
+  .retro-button {
+    font-family: 'Press Start 2P', monospace;
+    background: linear-gradient(to right, #ff0000, #00ff00);
+    border: 2px solid #fff;
+    color: black;
+    padding: 30px 60px;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px #ff0000, 0 0 30px #00ff00;
+    transition: 0.3s;
+    cursor: pointer;
+    margin: 20px 0;
+    position: relative;
+    z-index: 2;
+  }
 
-    .retro-button:hover {
-      background: black;
-      color: #00ff00;
-      box-shadow: 0 0 40px #ff0000;
-    }
+  .retro-button:hover {
+    background: black;
+    color: #00ff00;
+    box-shadow: 0 0 40px #ff0000;
+  }
 
-    /* Social media */
-    .social-menu {
-      position: fixed;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.6);
-      padding: 10px;
-      border-radius: 0 10px 10px 0;
-      width: 60px;
-      transition: width 0.3s ease;
-      overflow: hidden;
-      z-index: 10000;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
+  .social-menu {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 0 10px 10px 0;
+    width: 60px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    z-index: 10001; /* zawsze nad overlay */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 
-    .social-menu:hover { width: 280px; }
-    .social-menu a {
-      display: flex;
-      align-items: center;
-      color: #00ff00;
-      font-size: 1.2em;
-      padding: 10px;
-      text-decoration: none;
-    }
-    .social-menu a i { margin-right: 10px; transition: transform 0.3s ease; }
-    .social-menu:hover a i { transform: scale(1.2); }
-    .social-menu a::after {
-      content: attr(aria-label);
-      color: #00ff00;
-      margin-left: 10px;
-      opacity: 0;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      transform: translateX(-10px);
-      white-space: nowrap;
-    }
-    .social-menu:hover a::after { opacity: 1; transform: translateX(0); }
+  .social-menu:hover { width: 280px; }
+  .social-menu a {
+    display: flex;
+    align-items: center;
+    color: #00ff00;
+    font-size: 1.2em;
+    padding: 10px;
+    text-decoration: none;
+  }
+  .social-menu a i { margin-right: 10px; transition: transform 0.3s ease; }
+  .social-menu:hover a i { transform: scale(1.2); }
+  .social-menu a::after {
+    content: attr(aria-label);
+    color: #00ff00;
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-10px);
+    white-space: nowrap;
+  }
+  .social-menu:hover a::after { opacity: 1; transform: translateX(0); }
 
-    /* PARALLAX TŁO */
-    .parallax {
-      position: relative;
-      width: 100vw;
-      height: 120vh;
-      background-image: url('strona-internetowa.png'); 
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      border-top: 2px solid rgba(255,0,0,0.3);
-      border-bottom: 2px solid rgba(0,255,0,0.3);
-      transition: filter 0.5s ease;
-    }
+  .parallax {
+    position: relative;
+    width: 100vw;
+    height: 120vh;
+    background-image: url('strona-internetowa.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top: 2px solid rgba(255,0,0,0.3);
+    border-bottom: 2px solid rgba(0,255,0,0.3);
+    transition: filter 0.5s ease;
+    z-index: 1;
+  }
 
-    .blurred {
-      filter: blur(5px);
-    }
+  .blurred { filter: blur(5px); }
 
-    /* Overlay nowej strony */
-    #film-overlay {
-      position: fixed;
-      top: 100%;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,0.95);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      padding: 20px;
-      transition: top 0.8s ease;
-    }
+  /* Overlay nowej strony */
+  #film-overlay {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* między tłem a social menu */
+    padding: 20px;
+    transition: top 0.8s ease;
+  }
 
-    #film-overlay.active { top: 0; }
+  #film-overlay.active { top: 0; }
 
-    #film-overlay iframe {
-      width: 90%;
-      height: 70vh;
-      max-width: 1200px;
-    }
+  #film-overlay iframe {
+    width: 90%;
+    height: 70vh;
+    max-width: 1200px;
+  }
 
-    #film-overlay h2 {
-      margin-bottom: 20px;
-      font-size: 3em;
-      color: #ff0000;
-      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333;
-    }
+  #film-overlay h2 {
+    margin-bottom: 20px;
+    font-size: 3em;
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333;
+  }
 
-    footer { margin-top: 50px; text-align: center; font-size: 0.6em; opacity: 0.6; }
-  </style>
+  footer { margin-top: 50px; text-align: center; font-size: 0.6em; opacity: 0.6; z-index: 2; position: relative; }
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <div class="social-menu">
-      <a href="https://www.facebook.com/profile.php?id=61580169443672&sk=about_contact_and_basic_info" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://x.com/trzpisu4records/" target="_blank" aria-label="X (Twitter)"><i class_
+<nav>
+  <div class="social-menu">
+    <a href="https://www.facebook.com/profile.php?id=61580169443672&sk=about_contact_and_basic_info" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://x.com/trzpisu4records/" target="_blank" aria-label="X (Twitter)"><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="https://audiomack.com/trzpisurecords" target="_blank" aria-label="Audiomack"><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="https://instagram.com/trzpisu.records/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@trzpisu.records" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://open.spotify.com/artist/5cKkMWjvTyLSTiak2USzst?si=VOAjd2SUQsyDGnz00-Ld7g" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+    <a href="https://soundcloud.com/OHVJPhq5q2oXRJFPfq" target="_blank" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+    <a href="https://tiktok.com/@trzpisu.records" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
+</nav>
+
+<header class="neon-header">TO JEST ZIOM !!!</header>
+
+<main>
+  <h2 class="fade-in">TRZPISU</h2>
+
+  <button class="retro-button" onclick="openFilm()">
+    ODTWÓRZ NOWY KLIP
+  </button>
+
+</main>
+
+<section class="parallax" id="parallax-bg"></section>
+
+<!-- Overlay nowej strony -->
+<section id="film-overlay">
+  <h2>NOWY KLIP</h2>
+  <iframe src="https://www.youtube.com/embed/lZminZV7H1w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+  <a href="https://youtu.be/lZminZV7H1w" target="_blank" class="retro-button">OGLĄDAJ NA YOUTUBE</a>
+
+  <button class="retro-button" onclick="closeFilm()">ZAMKNIJ</button>
+</section>
+
+<h3>CONTACT:</h3>
+
+<div class="contact-item">
+  <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">
+  <div class="contact-info">tpsrecords.contact@gmail.com</div>
+</div>
+
+<footer>
+  &copy; 2025 TRZPISU RECORDS. Wszelkie prawa zastrzeżone.
+</footer>
+
+<script>
+function openFilm() {
+  document.getElementById('parallax-bg').classList.add('blurred'); // blur tylko tło
+  document.getElementById('film-overlay').classList.add('active'); // overlay wchodzi płynnie
+}
+
+function closeFilm() {
+  document.getElementById('parallax-bg').classList.remove('blurred');
+  document.getElementById('film-overlay').classList.remove('active');
+}
+</script>
+
+</body>
+</html>
