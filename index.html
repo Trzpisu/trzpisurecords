@@ -74,7 +74,7 @@
     width: 60px;
     transition: width 0.3s ease;
     overflow: hidden;
-    z-index: 10001; /* zawsze nad overlay */
+    z-index: 10001;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -118,8 +118,8 @@
 
   .blurred { filter: blur(5px); }
 
-  /* Overlay nowej strony */
-  #film-overlay {
+  /* Overlay film */
+  #film-overlay, #email-overlay {
     position: fixed;
     top: 100%;
     left: 0;
@@ -130,12 +130,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 10000; /* między tłem a social menu */
+    z-index: 10000;
     padding: 20px;
     transition: top 0.8s ease;
   }
 
-  #film-overlay.active { top: 0; }
+  #film-overlay.active, #email-overlay.active { top: 0; }
 
   #film-overlay iframe {
     width: 90%;
@@ -143,14 +143,36 @@
     max-width: 1200px;
   }
 
-  #film-overlay h2 {
+  #film-overlay h2, #email-overlay h2 {
     margin-bottom: 20px;
     font-size: 3em;
     color: #ff0000;
     text-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333;
+    text-align: center;
   }
 
   footer { margin-top: 50px; text-align: center; font-size: 0.6em; opacity: 0.6; z-index: 2; position: relative; }
+
+  /* ============================= */
+  /* CONTACT ICON */
+  /* ============================= */
+  .contact-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .contact-item img:hover { transform: scale(1.2); }
+
+  @media (max-width: 480px) {
+    .contact-item img {
+      width: 24px;
+      height: 24px;
+    }
+  }
 
   /* ============================= */
   /* RESPONSYWNOŚĆ – MOBILE FIRST */
@@ -172,7 +194,7 @@
     .social-menu { width: 50px; gap: 10px; }
     .social-menu:hover { width: 200px; }
     .social-menu a { font-size: 1em; padding: 8px; }
-    #film-overlay h2 { font-size: 2em; text-align: center; }
+    #film-overlay h2, #email-overlay h2 { font-size: 2em; }
     #film-overlay iframe { width: 100%; height: 45vh; }
     footer { font-size: 0.55em; padding: 10px; }
   }
@@ -183,6 +205,7 @@
     .retro-button { font-size: 0.8em; }
     #film-overlay iframe { height: 40vh; }
   }
+
 </style>
 </head>
 
@@ -214,21 +237,25 @@
 
 <section class="parallax" id="parallax-bg"></section>
 
-<!-- Overlay nowej strony -->
+<!-- Overlay film -->
 <section id="film-overlay">
   <h2>NOWY KLIP</h2>
   <iframe src="https://www.youtube.com/embed/lZminZV7H1w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
   <a href="https://youtu.be/lZminZV7H1w" target="_blank" class="retro-button">OGLĄDAJ NA YOUTUBE</a>
-
   <button class="retro-button" onclick="closeFilm()">ZAMKNIJ</button>
 </section>
 
-<h3>CONTACT:</h3>
+<!-- Overlay email -->
+<section id="email-overlay">
+  <h2>SKONTAKTUJ SIĘ</h2>
+  <p style="color:#00ff00; font-size:1.5em; margin-bottom:30px;">tpsrecords.contact@gmail.com</p>
+  <button class="retro-button" onclick="closeEmail()">ZAMKNIJ</button>
+</section>
 
+<h3>CONTACT:</h3>
 <div class="contact-item">
-  <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">
-  <div class="contact-info">tpsrecords.contact@gmail.com</div>
+  <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail" onclick="openEmail()">
+  <div class="contact-info">Kliknij w ikonę aby zobaczyć adres email</div>
 </div>
 
 <footer>
@@ -237,16 +264,25 @@
 
 <script>
 function openFilm() {
-  document.getElementById('parallax-bg').classList.add('blurred'); // blur tylko tło
-  document.getElementById('film-overlay').classList.add('active'); // overlay wchodzi płynnie
+  document.getElementById('parallax-bg').classList.add('blurred');
+  document.getElementById('film-overlay').classList.add('active');
 }
 
 function closeFilm() {
   document.getElementById('parallax-bg').classList.remove('blurred');
   document.getElementById('film-overlay').classList.remove('active');
 }
+
+function openEmail() {
+  document.getElementById('parallax-bg').classList.add('blurred');
+  document.getElementById('email-overlay').classList.add('active');
+}
+
+function closeEmail() {
+  document.getElementById('parallax-bg').classList.remove('blurred');
+  document.getElementById('email-overlay').classList.remove('active');
+}
 </script>
 
 </body>
 </html>
-
