@@ -151,6 +151,38 @@
   }
 
   footer { margin-top: 50px; text-align: center; font-size: 0.6em; opacity: 0.6; z-index: 2; position: relative; }
+
+  /* ============================= */
+  /* RESPONSYWNOŚĆ – MOBILE FIRST */
+  /* ============================= */
+
+  @media (max-width: 1024px) {
+    header { font-size: 3em; }
+    h2 { font-size: 2em; }
+    .retro-button { padding: 20px 40px; font-size: 1em; }
+    .parallax { height: 80vh; }
+  }
+
+  @media (max-width: 768px) {
+    body { padding-top: 60px; font-size: 14px; }
+    header { font-size: 2.2em; padding: 0 10px; }
+    h2 { font-size: 1.6em; margin-bottom: 20px; }
+    .retro-button { padding: 18px 28px; font-size: 0.9em; width: 90%; max-width: 320px; }
+    .parallax { height: 60vh; background-position: center top; }
+    .social-menu { width: 50px; gap: 10px; }
+    .social-menu:hover { width: 200px; }
+    .social-menu a { font-size: 1em; padding: 8px; }
+    #film-overlay h2 { font-size: 2em; text-align: center; }
+    #film-overlay iframe { width: 100%; height: 45vh; }
+    footer { font-size: 0.55em; padding: 10px; }
+  }
+
+  @media (max-width: 480px) {
+    header { font-size: 1.8em; }
+    h2 { font-size: 1.3em; }
+    .retro-button { font-size: 0.8em; }
+    #film-overlay iframe { height: 40vh; }
+  }
 </style>
 </head>
 
