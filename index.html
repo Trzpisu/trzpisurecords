@@ -9,209 +9,217 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
-    font-family: 'Press Start 2P', monospace;
-    color: #00ff00;
-    text-align: center;
-    padding-top: 100px;
-    background-color: #0e0e0e;
-    overflow-x: hidden;
-  }
+body {
+  font-family: 'Press Start 2P', monospace;
+  color: #00ff00;
+  text-align: center;
+  padding-top: 100px;
+  background-color: #0e0e0e;
+  overflow-x: hidden;
+}
 
-  header {
-    font-size: 4em;
-    margin-bottom: 40px;
-    color: #39ff14;
-    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
-    animation: neonGlow 2s infinite alternate;
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: 2px;
-    position: relative;
-    z-index: 2;
-  }
+header {
+  font-size: 4em;
+  margin-bottom: 40px;
+  color: #39ff14;
+  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+  animation: neonGlow 2s infinite alternate;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+}
 
-  @keyframes neonGlow {
-    from { text-shadow: 0 0 5px #39ff14, 0 0 10px #00ffcc; }
-    to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #39ff14; }
-  }
+@keyframes neonGlow {
+  from { text-shadow: 0 0 5px #39ff14, 0 0 10px #00ffcc; }
+  to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #39ff14; }
+}
 
-  .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInMove 1s forwards; }
-  @keyframes fadeInMove { to { opacity: 1; transform: translateY(0); } }
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeInMove 1s forwards; }
+@keyframes fadeInMove { to { opacity: 1; transform: translateY(0); } }
 
-  .retro-button {
-    font-family: 'Press Start 2P', monospace;
-    background: linear-gradient(to right, #ff0000, #00ff00);
-    border: 2px solid #fff;
-    color: black;
-    padding: 30px 60px;
-    font-size: 1.3em;
-    text-transform: uppercase;
-    box-shadow: 0 0 20px #ff0000, 0 0 30px #00ff00;
-    transition: 0.3s;
-    cursor: pointer;
-    margin: 20px 0;
-    position: relative;
-    z-index: 2;
-  }
+.retro-button {
+  font-family: 'Press Start 2P', monospace;
+  background: linear-gradient(to right, #ff0000, #00ff00);
+  border: 2px solid #fff;
+  color: black;
+  padding: 30px 60px;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px #ff0000, 0 0 30px #00ff00;
+  transition: 0.3s;
+  cursor: pointer;
+  margin: 20px 0;
+  position: relative;
+  z-index: 2;
+}
 
-  .retro-button:hover {
-    background: black;
-    color: #00ff00;
-    box-shadow: 0 0 40px #ff0000;
-  }
+.retro-button:hover {
+  background: black;
+  color: #00ff00;
+  box-shadow: 0 0 40px #ff0000;
+}
 
-  .square-button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 220px;
-    height: 220px;
-    margin: 30px auto;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.1em;
-    text-decoration: none;
-    color: black;
-    background: linear-gradient(135deg, #00ff00, #ff0000);
-    border: 3px solid white;
-    box-shadow: 0 0 25px #00ff00, 0 0 35px #ff0000;
-    transition: 0.3s;
-  }
+.square-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 220px;
+  margin: 30px auto;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  text-decoration: none;
+  color: black;
+  background: linear-gradient(135deg, #00ff00, #ff0000);
+  border: 3px solid white;
+  box-shadow: 0 0 25px #00ff00, 0 0 35px #ff0000;
+  transition: 0.3s;
+}
 
-  .square-button:hover {
-    background: black;
-    color: #00ff00;
-    box-shadow: 0 0 50px #ff0000;
-    transform: scale(1.05);
-  }
+.square-button:hover {
+  background: black;
+  color: #00ff00;
+  box-shadow: 0 0 50px #ff0000;
+  transform: scale(1.05);
+}
 
-  .social-menu {
-    position: fixed;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
-    padding: 10px;
-    border-radius: 0 10px 10px 0;
-    width: 60px;
-    transition: width 0.3s ease;
-    overflow: hidden;
-    z-index: 10001;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
+.social-menu {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 0 10px 10px 0;
+  width: 60px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
-  .social-menu:hover { width: 280px; }
-  .social-menu a {
-    display: flex;
-    align-items: center;
-    color: #00ff00;
-    font-size: 1.2em;
-    padding: 10px;
-    text-decoration: none;
-  }
-  .social-menu a i { margin-right: 10px; transition: transform 0.3s ease; }
-  .social-menu:hover a i { transform: scale(1.2); }
-  .social-menu a::after {
-    content: attr(aria-label);
-    color: #00ff00;
-    margin-left: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    transform: translateX(-10px);
-    white-space: nowrap;
-  }
-  .social-menu:hover a::after { opacity: 1; transform: translateX(0); }
+.social-menu:hover { width: 280px; }
+.social-menu a {
+  display: flex;
+  align-items: center;
+  color: #00ff00;
+  font-size: 1.2em;
+  padding: 10px;
+  text-decoration: none;
+}
+.social-menu a i { margin-right: 10px; transition: transform 0.3s ease; }
+.social-menu:hover a i { transform: scale(1.2); }
+.social-menu a::after {
+  content: attr(aria-label);
+  color: #00ff00;
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateX(-10px);
+  white-space: nowrap;
+}
+.social-menu:hover a::after { opacity: 1; transform: translateX(0); }
 
-  .parallax {
-    position: relative;
-    width: 100vw;
-    height: 120vh;
-    background-image: url('strona-internetowa.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-top: 2px solid rgba(255,0,0,0.3);
-    border-bottom: 2px solid rgba(0,255,0,0.3);
-    transition: filter 0.5s ease;
-    z-index: 1;
-  }
+.parallax {
+  position: relative;
+  width: 100vw;
+  height: 120vh;
+  background-image: url('strona-internetowa.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top: 2px solid rgba(255,0,0,0.3);
+  border-bottom: 2px solid rgba(0,255,0,0.3);
+  transition: filter 0.5s ease;
+  z-index: 1;
+}
 
-  .blurred { filter: blur(5px); }
+.blurred { filter: blur(5px); }
 
-  /* Overlay film + about */
-  .overlay {
-    position: fixed;
-    top: 100%;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.95);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    padding: 20px;
-    transition: top 0.8s ease;
-    overflow-y: auto;
-  }
+.overlay {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 20px;
+  transition: top 0.8s ease;
+  overflow-y: auto;
+}
 
-  .overlay.active { top: 0; }
+.overlay.active { top: 0; }
 
-  .overlay h2 {
-    margin-bottom: 20px;
-    font-size: 3em;
-    color: #ff0000;
-    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333;
-    text-align: center;
-  }
+.overlay h2 {
+  margin-bottom: 20px;
+  font-size: 3em;
+  color: #ff0000;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333;
+  text-align: center;
+}
 
-  .overlay p {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.1em;
-    line-height: 1.7;
-    color: #00ff00;
-    margin-bottom: 20px;
-  }
+.overlay p {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #00ff00;
+  margin-bottom: 20px;
+}
 
-  .language-switch {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-    z-index: 10010;
-  }
+.overlay ul {
+  text-align: left;
+  margin: 20px auto;
+  padding-left: 20px;
+}
 
-  .language-switch button {
-    background: black;
-    color: #00ff00;
-    border: 2px solid #00ff00;
-    padding: 8px 14px;
-    cursor: pointer;
-    font-family: 'Orbitron', sans-serif;
-    transition: 0.3s;
-  }
+.overlay ul li {
+  margin-bottom: 15px;
+}
 
-  .language-switch button:hover {
-    background: #00ff00;
-    color: black;
-  }
+.language-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 10010;
+}
 
-  footer { margin-top: 50px; text-align: center; font-size: 0.6em; opacity: 0.6; z-index: 2; position: relative; }
+.language-switch button {
+  background: black;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  transition: 0.3s;
+}
 
-  @media (max-width: 768px) {
-    header { font-size: 2.2em; }
-    .retro-button { padding: 18px 28px; font-size: 0.9em; width: 90%; max-width: 320px; }
-    .parallax { height: 60vh; background-position: center top; }
-    .overlay h2 { font-size: 2em; }
-    .overlay p { font-size: 1em; }
-    .square-button { width: 180px; height: 180px; font-size: 1em; }
-  }
+.language-switch button:hover {
+  background: #00ff00;
+  color: black;
+}
 
+footer { margin-top: 50px; text-align: center; font-size: 0.6em; opacity: 0.6; z-index: 2; position: relative; }
+
+@media (max-width: 768px) {
+  header { font-size: 2.2em; }
+  .retro-button { padding: 18px 28px; font-size: 0.9em; width: 90%; max-width: 320px; }
+  .parallax { height: 60vh; background-position: center top; }
+  .overlay h2 { font-size: 2em; }
+  .overlay p, .overlay ul li { font-size: 1em; }
+  .square-button { width: 180px; height: 180px; font-size: 1em; }
+}
 </style>
 </head>
 
@@ -259,18 +267,42 @@
 
   <h2>TRZPISU</h2>
 
+  <!-- ENGLISH -->
   <div id="en">
-    <p>Trzpisu is a 19-year-old artist from the heart of Podkarpacie, Poland who is quickly making his mark on the music scene with a clear vision and strong dedication.</p>
-    <p>Despite his young age, he combines ambition with artistic maturity, crafting a dark and emotional sound defined by heavy basslines, immersive atmospheres, and bold experimentation.</p>
-    <p>As an independent artist, Trzpisu writes, produces, and records all of his music himself, highlighting his versatile skills and passion for complete artistic control.</p>
-    <p>His debut single, “whereyougoin’,” confirms his unique voice and strong presence in the contemporary music scene.</p>
+    <p><strong>Trzpisu</strong> is a 19-year-old independent artist from Podkarpacie, Poland, quickly establishing his unique sound characterized by deep bass, emotional depth, and creative experimentation.</p>
+    
+    <h3>Discography:</h3>
+    <ul>
+      <li><strong>“whereyougoin’”</strong> - 05.09.2025<br>
+      Debut single blending trap, lo-fi, and urban sounds. Themes of independence and personal ambition.</li>
+      
+      <li><strong>“redgreen”</strong> - 17.10.2025<br>
+      Second single with experimental electronic layers, showcasing artistic growth and originality.</li>
+      
+      <li><strong>“definicja artysty”</strong> - 12.12.2025<br>
+      Third single summarizing Trzpisu's debut year. Emphasizes authenticity and creative vision.</li>
+    </ul>
+
+    <p>Trzpisu writes, produces, and records all of his music himself. His work resonates with listeners seeking genuine expression and innovative sounds, marking him as a rising star in the contemporary music scene.</p>
   </div>
 
+  <!-- POLISH -->
   <div id="pl" style="display:none;">
-    <p>Trzpisu to 19-letni artysta z serca Podkarpacia, który szybko zaznacza swoją obecność na scenie muzycznej dzięki wyraźnej wizji i silnemu zaangażowaniu.</p>
-    <p>Pomimo młodego wieku łączy ambicję z artystyczną dojrzałością, tworząc mroczne i emocjonalne brzmienie oparte na ciężkich basach i hipnotycznych klimatach.</p>
-    <p>Jako niezależny twórca sam pisze, produkuje i nagrywa swoją muzykę, co podkreśla jego wszechstronność i potrzebę pełnej kontroli artystycznej.</p>
-    <p>Debiutancki singiel „whereyougoin’” stanowi mocne wprowadzenie do jego unikalnego stylu i przekazu.</p>
+    <p><strong>Trzpisu</strong> to 19-letni niezależny artysta z Podkarpacia, który szybko buduje swój własny, charakterystyczny styl muzyczny, łączący mocne basy, emocje i eksperymenty twórcze.</p>
+    
+    <h3>Dyskografia:</h3>
+    <ul>
+      <li><strong>„whereyougoin’”</strong> - 05.09.2025<br>
+      Debiutancki singiel łączący trap, lo-fi i miejskie brzmienia. Tematy samodzielności i ambicji.</li>
+      
+      <li><strong>„redgreen”</strong> - 17.10.2025<br>
+      Drugi singiel z warstwami eksperymentalnej elektroniki, pokazujący rozwój artystyczny i oryginalność.</li>
+      
+      <li><strong>„definicja artysty”</strong> - 12.12.2025<br>
+      Trzeci singiel podsumowujący debiutancki rok Trzpisu. Kładzie nacisk na autentyczność i wizję twórczą.</li>
+    </ul>
+
+    <p>Trzpisu sam pisze, produkuje i nagrywa swoją muzykę. Jego twórczość trafia do słuchaczy szukających szczerego przekazu i nowatorskich brzmień, potwierdzając jego pozycję wschodzącej gwiazdy na scenie muzyki współczesnej.</p>
   </div>
 
   <button class="retro-button" onclick="closeAbout()">ZAMKNIJ</button>
@@ -298,32 +330,26 @@ function openFilm() {
   document.getElementById('parallax-bg').classList.add('blurred');
   document.getElementById('film-overlay').classList.add('active');
 }
-
 function closeFilm() {
   document.getElementById('parallax-bg').classList.remove('blurred');
   document.getElementById('film-overlay').classList.remove('active');
 }
-
 function openEmail() {
   document.getElementById('parallax-bg').classList.add('blurred');
   document.getElementById('email-overlay').classList.add('active');
 }
-
 function closeEmail() {
   document.getElementById('parallax-bg').classList.remove('blurred');
   document.getElementById('email-overlay').classList.remove('active');
 }
-
 function openAbout() {
   document.getElementById('parallax-bg').classList.add('blurred');
   document.getElementById('about-overlay').classList.add('active');
 }
-
 function closeAbout() {
   document.getElementById('parallax-bg').classList.remove('blurred');
   document.getElementById('about-overlay').classList.remove('active');
 }
-
 function setLang(lang) {
   document.getElementById('en').style.display = lang === 'en' ? 'block' : 'none';
   document.getElementById('pl').style.display = lang === 'pl' ? 'block' : 'none';
