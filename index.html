@@ -6,7 +6,7 @@
 <title>TRZPISU'S OFFICIAL WEBSITE</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,7 +22,6 @@
 
   header {
     font-size: 4em;
-    text-align: center;
     margin-bottom: 40px;
     color: #39ff14;
     text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
@@ -61,6 +60,30 @@
     background: black;
     color: #00ff00;
     box-shadow: 0 0 40px #ff0000;
+  }
+
+  .square-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 220px;
+    margin: 30px auto;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: black;
+    background: linear-gradient(135deg, #00ff00, #ff0000);
+    border: 3px solid white;
+    box-shadow: 0 0 25px #00ff00, 0 0 35px #ff0000;
+    transition: 0.3s;
+  }
+
+  .square-button:hover {
+    background: black;
+    color: #00ff00;
+    box-shadow: 0 0 50px #ff0000;
+    transform: scale(1.05);
   }
 
   .social-menu {
@@ -118,8 +141,8 @@
 
   .blurred { filter: blur(5px); }
 
-  /* Overlay film */
-  #film-overlay, #email-overlay {
+  /* Overlay film + about */
+  .overlay {
     position: fixed;
     top: 100%;
     left: 0;
@@ -133,17 +156,12 @@
     z-index: 10000;
     padding: 20px;
     transition: top 0.8s ease;
+    overflow-y: auto;
   }
 
-  #film-overlay.active, #email-overlay.active { top: 0; }
+  .overlay.active { top: 0; }
 
-  #film-overlay iframe {
-    width: 90%;
-    height: 70vh;
-    max-width: 1200px;
-  }
-
-  #film-overlay h2, #email-overlay h2 {
+  .overlay h2 {
     margin-bottom: 20px;
     font-size: 3em;
     color: #ff0000;
@@ -151,59 +169,47 @@
     text-align: center;
   }
 
+  .overlay p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #00ff00;
+    margin-bottom: 20px;
+  }
+
+  .language-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10010;
+  }
+
+  .language-switch button {
+    background: black;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.3s;
+  }
+
+  .language-switch button:hover {
+    background: #00ff00;
+    color: black;
+  }
+
   footer { margin-top: 50px; text-align: center; font-size: 0.6em; opacity: 0.6; z-index: 2; position: relative; }
 
-  /* ============================= */
-  /* CONTACT ICON */
-  /* ============================= */
-  .contact-item img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    vertical-align: middle;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-
-  .contact-item img:hover { transform: scale(1.2); }
-
-  @media (max-width: 480px) {
-    .contact-item img {
-      width: 24px;
-      height: 24px;
-    }
-  }
-
-  /* ============================= */
-  /* RESPONSYWNOŚĆ – MOBILE FIRST */
-  /* ============================= */
-
-  @media (max-width: 1024px) {
-    header { font-size: 3em; }
-    h2 { font-size: 2em; }
-    .retro-button { padding: 20px 40px; font-size: 1em; }
-    .parallax { height: 80vh; }
-  }
-
   @media (max-width: 768px) {
-    body { padding-top: 60px; font-size: 14px; }
-    header { font-size: 2.2em; padding: 0 10px; }
-    h2 { font-size: 1.6em; margin-bottom: 20px; }
+    header { font-size: 2.2em; }
     .retro-button { padding: 18px 28px; font-size: 0.9em; width: 90%; max-width: 320px; }
     .parallax { height: 60vh; background-position: center top; }
-    .social-menu { width: 50px; gap: 10px; }
-    .social-menu:hover { width: 200px; }
-    .social-menu a { font-size: 1em; padding: 8px; }
-    #film-overlay h2, #email-overlay h2 { font-size: 2em; }
-    #film-overlay iframe { width: 100%; height: 45vh; }
-    footer { font-size: 0.55em; padding: 10px; }
-  }
-
-  @media (max-width: 480px) {
-    header { font-size: 1.8em; }
-    h2 { font-size: 1.3em; }
-    .retro-button { font-size: 0.8em; }
-    #film-overlay iframe { height: 40vh; }
+    .overlay h2 { font-size: 2em; }
+    .overlay p { font-size: 1em; }
+    .square-button { width: 180px; height: 180px; font-size: 1em; }
   }
 
 </style>
@@ -229,27 +235,45 @@
 <main>
   <h2 class="fade-in">TRZPISU</h2>
 
-  <button class="retro-button" onclick="openFilm()">
-    ODTWÓRZ NOWY KLIP
-  </button>
+  <button class="retro-button" onclick="openFilm()">ODTWÓRZ NOWY KLIP</button>
 
+  <button class="square-button fade-in" onclick="openAbout()">ABOUT TRZPISU</button>
 </main>
 
 <section class="parallax" id="parallax-bg"></section>
 
 <!-- Overlay film -->
-<section id="film-overlay">
+<section id="film-overlay" class="overlay">
   <h2>NOWY KLIP</h2>
-  <iframe src="https://www.youtube.com/embed/lZminZV7H1w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/lZminZV7H1w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:90%; height:70vh; max-width:1200px;"></iframe>
   <a href="https://youtu.be/lZminZV7H1w" target="_blank" class="retro-button">OGLĄDAJ NA YOUTUBE</a>
   <button class="retro-button" onclick="closeFilm()">ZAMKNIJ</button>
 </section>
 
-<!-- Overlay email -->
-<section id="email-overlay">
-  <h2>SKONTAKTUJ SIĘ</h2>
-  <p style="color:#00ff00; font-size:1.5em; margin-bottom:30px;">tpsrecords.contact@gmail.com</p>
-  <button class="retro-button" onclick="closeEmail()">ZAMKNIJ</button>
+<!-- Overlay about -->
+<section id="about-overlay" class="overlay">
+  <div class="language-switch">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('pl')">PL</button>
+  </div>
+
+  <h2>TRZPISU</h2>
+
+  <div id="en">
+    <p>Trzpisu is a 19-year-old artist from the heart of Podkarpacie, Poland who is quickly making his mark on the music scene with a clear vision and strong dedication.</p>
+    <p>Despite his young age, he combines ambition with artistic maturity, crafting a dark and emotional sound defined by heavy basslines, immersive atmospheres, and bold experimentation.</p>
+    <p>As an independent artist, Trzpisu writes, produces, and records all of his music himself, highlighting his versatile skills and passion for complete artistic control.</p>
+    <p>His debut single, “whereyougoin’,” confirms his unique voice and strong presence in the contemporary music scene.</p>
+  </div>
+
+  <div id="pl" style="display:none;">
+    <p>Trzpisu to 19-letni artysta z serca Podkarpacia, który szybko zaznacza swoją obecność na scenie muzycznej dzięki wyraźnej wizji i silnemu zaangażowaniu.</p>
+    <p>Pomimo młodego wieku łączy ambicję z artystyczną dojrzałością, tworząc mroczne i emocjonalne brzmienie oparte na ciężkich basach i hipnotycznych klimatach.</p>
+    <p>Jako niezależny twórca sam pisze, produkuje i nagrywa swoją muzykę, co podkreśla jego wszechstronność i potrzebę pełnej kontroli artystycznej.</p>
+    <p>Debiutancki singiel „whereyougoin’” stanowi mocne wprowadzenie do jego unikalnego stylu i przekazu.</p>
+  </div>
+
+  <button class="retro-button" onclick="closeAbout()">ZAMKNIJ</button>
 </section>
 
 <h3>CONTACT:</h3>
@@ -257,6 +281,13 @@
   <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail" onclick="openEmail()">
   <div class="contact-info">KLIKNIJ W IKONĘ, ABY ZOBACZYĆ ADRES EMAIL</div>
 </div>
+
+<!-- Overlay email -->
+<section id="email-overlay" class="overlay">
+  <h2>SKONTAKTUJ SIĘ</h2>
+  <p style="font-size:1.5em; margin-bottom:30px;">tpsrecords.contact@gmail.com</p>
+  <button class="retro-button" onclick="closeEmail()">ZAMKNIJ</button>
+</section>
 
 <footer>
   &copy; 2025 TRZPISU RECORDS. Wszelkie prawa zastrzeżone.
@@ -281,6 +312,21 @@ function openEmail() {
 function closeEmail() {
   document.getElementById('parallax-bg').classList.remove('blurred');
   document.getElementById('email-overlay').classList.remove('active');
+}
+
+function openAbout() {
+  document.getElementById('parallax-bg').classList.add('blurred');
+  document.getElementById('about-overlay').classList.add('active');
+}
+
+function closeAbout() {
+  document.getElementById('parallax-bg').classList.remove('blurred');
+  document.getElementById('about-overlay').classList.remove('active');
+}
+
+function setLang(lang) {
+  document.getElementById('en').style.display = lang === 'en' ? 'block' : 'none';
+  document.getElementById('pl').style.display = lang === 'pl' ? 'block' : 'none';
 }
 </script>
 
