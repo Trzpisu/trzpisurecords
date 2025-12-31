@@ -150,10 +150,10 @@ header {
   background: rgba(0,0,0,0.95);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   z-index: 10000;
-  padding: 20px;
+  padding: 60px 20px 20px 20px;
   transition: top 0.8s ease;
   overflow-y: auto;
 }
@@ -166,24 +166,6 @@ header {
   color: #ff0000;
   text-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333;
   text-align: center;
-}
-
-.overlay p {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.1em;
-  line-height: 1.7;
-  color: #00ff00;
-  margin-bottom: 20px;
-}
-
-.overlay ul {
-  text-align: left;
-  margin: 20px auto;
-  padding-left: 20px;
-}
-
-.overlay ul li {
-  margin-bottom: 15px;
 }
 
 .language-switch {
@@ -210,6 +192,33 @@ header {
   color: black;
 }
 
+/* Bloki notatek */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.note {
+  padding: 20px;
+  border-left: 3px solid #00ff00;
+  border-right: 3px solid #ff0000;
+  background: rgba(0,0,0,0.6);
+  border-radius: 10px;
+  line-height: 1.6;
+}
+
+.note.left { align-self: flex-start; max-width: 80%; }
+.note.right { align-self: flex-end; max-width: 80%; }
+
+.note h3 { margin-bottom: 15px; }
+
+ul { padding-left: 20px; }
+ul li { margin-bottom: 12px; }
+
 footer { margin-top: 50px; text-align: center; font-size: 0.6em; opacity: 0.6; z-index: 2; position: relative; }
 
 @media (max-width: 768px) {
@@ -219,6 +228,7 @@ footer { margin-top: 50px; text-align: center; font-size: 0.6em; opacity: 0.6; z
   .overlay h2 { font-size: 2em; }
   .overlay p, .overlay ul li { font-size: 1em; }
   .square-button { width: 180px; height: 180px; font-size: 1em; }
+  .note.left, .note.right { max-width: 95%; }
 }
 </style>
 </head>
@@ -265,44 +275,60 @@ footer { margin-top: 50px; text-align: center; font-size: 0.6em; opacity: 0.6; z
     <button onclick="setLang('pl')">PL</button>
   </div>
 
-  <h2>TRZPISU</h2>
-
   <!-- ENGLISH -->
-  <div id="en">
-    <p><strong>Trzpisu</strong> is a 19-year-old independent artist from Podkarpacie, Poland, quickly establishing his unique sound characterized by deep bass, emotional depth, and creative experimentation.</p>
-    
-    <h3>Discography:</h3>
-    <ul>
-      <li><strong>“whereyougoin’”</strong> - 05.09.2025<br>
-      Debut single blending trap, lo-fi, and urban sounds. Themes of independence and personal ambition.</li>
-      
-      <li><strong>“redgreen”</strong> - 17.10.2025<br>
-      Second single with experimental electronic layers, showcasing artistic growth and originality.</li>
-      
-      <li><strong>“definicja artysty”</strong> - 12.12.2025<br>
-      Third single summarizing Trzpisu's debut year. Emphasizes authenticity and creative vision.</li>
-    </ul>
-
-    <p>Trzpisu writes, produces, and records all of his music himself. His work resonates with listeners seeking genuine expression and innovative sounds, marking him as a rising star in the contemporary music scene.</p>
+  <div id="en" class="about-content" style="display:none;">
+    <h2>TRZPISU</h2>
+    <div class="note right">
+      <p><strong>Trzpisu</strong> is a 19-year-old independent artist from Podkarpacie, Poland, emerging strongly in 2025. He has quickly crafted a unique sound characterized by deep bass, immersive atmospheres, and bold experimentation.</p>
+    </div>
+    <div class="note left">
+      <p>Inspired by pioneers who pushed creative boundaries, Trzpisu avoids imitation and trends, delivering raw, authentic stories drawn from his personal experiences and artistic vision.</p>
+    </div>
+    <div class="note right">
+      <h3>Discography</h3>
+      <ul>
+        <li><strong>whereyougoin’</strong> - 05.09.2025<br>
+        Debut single blending trap, lo-fi, and urban sounds. Themes: independence, self-discovery, ambition.</li>
+        <li><strong>redgreen</strong> - 17.10.2025<br>
+        Second single with experimental electronic layers. Shows artistic growth and originality.</li>
+        <li><strong>definicja artysty</strong> - 12.12.2025<br>
+        Third single summarizing his debut year. Highlights authenticity, vision, and creative freedom.</li>
+      </ul>
+    </div>
+    <div class="note left">
+      <p>As an independent artist, Trzpisu writes, produces, and records all of his music himself. He blends emotional storytelling with advanced production, establishing a strong artistic identity.</p>
+    </div>
+    <div class="note right">
+      <p>His work resonates with listeners seeking honesty and originality. Trzpisu continues to push boundaries, preparing for a promising career in the contemporary music scene.</p>
+    </div>
   </div>
 
   <!-- POLISH -->
-  <div id="pl" style="display:none;">
-    <p><strong>Trzpisu</strong> to 19-letni niezależny artysta z Podkarpacia, który szybko buduje swój własny, charakterystyczny styl muzyczny, łączący mocne basy, emocje i eksperymenty twórcze.</p>
-    
-    <h3>Dyskografia:</h3>
-    <ul>
-      <li><strong>„whereyougoin’”</strong> - 05.09.2025<br>
-      Debiutancki singiel łączący trap, lo-fi i miejskie brzmienia. Tematy samodzielności i ambicji.</li>
-      
-      <li><strong>„redgreen”</strong> - 17.10.2025<br>
-      Drugi singiel z warstwami eksperymentalnej elektroniki, pokazujący rozwój artystyczny i oryginalność.</li>
-      
-      <li><strong>„definicja artysty”</strong> - 12.12.2025<br>
-      Trzeci singiel podsumowujący debiutancki rok Trzpisu. Kładzie nacisk na autentyczność i wizję twórczą.</li>
-    </ul>
-
-    <p>Trzpisu sam pisze, produkuje i nagrywa swoją muzykę. Jego twórczość trafia do słuchaczy szukających szczerego przekazu i nowatorskich brzmień, potwierdzając jego pozycję wschodzącej gwiazdy na scenie muzyki współczesnej.</p>
+  <div id="pl" class="about-content" style="display:none;">
+    <h2>TRZPISU</h2>
+    <div class="note right">
+      <p><strong>Trzpisu</strong> to 19-letni niezależny artysta z Podkarpacia, który w 2025 roku szybko buduje swoją muzyczną tożsamość. Jego brzmienie charakteryzuje się głębokimi basami, immersyjną atmosferą i odważnymi eksperymentami.</p>
+    </div>
+    <div class="note left">
+      <p>Inspirując się pionierami, którzy przesuwali granice muzyki, Trzpisu unika kopiowania trendów, dostarczając surowe, autentyczne historie wynikające z osobistych doświadczeń i wizji artystycznej.</p>
+    </div>
+    <div class="note right">
+      <h3>Dyskografia</h3>
+      <ul>
+        <li><strong>whereyougoin’</strong> - 05.09.2025<br>
+        Debiutancki singiel łączący trap, lo-fi i miejskie brzmienia. Tematy: niezależność, odkrywanie siebie, ambicja.</li>
+        <li><strong>redgreen</strong> - 17.10.2025<br>
+        Drugi singiel z warstwami eksperymentalnej elektroniki. Pokazuje rozwój artystyczny i oryginalność.</li>
+        <li><strong>definicja artysty</strong> - 12.12.2025<br>
+        Trzeci singiel podsumowujący debiutancki rok. Podkreśla autentyczność, wizję i wolność twórczą.</li>
+      </ul>
+    </div>
+    <div class="note left">
+      <p>Trzpisu sam pisze, produkuje i nagrywa swoją muzykę. Łączy emocjonalne opowieści z nowoczesną produkcją, budując silną tożsamość artystyczną.</p>
+    </div>
+    <div class="note right">
+      <p>Jego twórczość trafia do słuchaczy szukających szczerości i oryginalności. Trzpisu nieustannie przesuwa granice, przygotowując się na obiecującą karierę na współczesnej scenie muzycznej.</p>
+    </div>
   </div>
 
   <button class="retro-button" onclick="closeAbout()">ZAMKNIJ</button>
@@ -345,14 +371,16 @@ function closeEmail() {
 function openAbout() {
   document.getElementById('parallax-bg').classList.add('blurred');
   document.getElementById('about-overlay').classList.add('active');
+  document.getElementById('en').style.display = 'block';
+  document.getElementById('pl').style.display = 'none';
 }
 function closeAbout() {
   document.getElementById('parallax-bg').classList.remove('blurred');
   document.getElementById('about-overlay').classList.remove('active');
 }
 function setLang(lang) {
-  document.getElementById('en').style.display = lang === 'en' ? 'block' : 'none';
-  document.getElementById('pl').style.display = lang === 'pl' ? 'block' : 'none';
+  document.getElementById('en').style.display = lang==='en'?'block':'none';
+  document.getElementById('pl').style.display = lang==='pl'?'block':'none';
 }
 </script>
 
