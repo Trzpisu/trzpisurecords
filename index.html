@@ -9,418 +9,250 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-  font-family: 'Press Start 2P', monospace;
-  color: #00ff00;
-  text-align: center;
-  padding-top: 100px;
-  background-color: #0e0e0e;
-  overflow-x: hidden;
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body{
+font-family:'Press Start 2P', monospace;
+color:#00ff00;
+text-align:center;
+padding-top:100px;
+background-color:#0e0e0e;
+overflow-x:hidden;
 }
 
-header {
-  font-size: 4em;
-  margin-bottom: 40px;
-  color: #39ff14;
-  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
-  animation: neonGlow 2s infinite alternate;
-  font-family: 'Orbitron', sans-serif;
-  letter-spacing: 2px;
-  position: relative;
-  z-index: 2;
+header{
+font-size:4em;
+margin-bottom:40px;
+color:#39ff14;
+text-shadow:0 0 5px #39ff14,0 0 10px #39ff14,0 0 20px #00ffcc,0 0 40px #00ffcc;
+animation:neonGlow 2s infinite alternate;
+font-family:'Orbitron', sans-serif;
+letter-spacing:2px;
 }
 
-@keyframes neonGlow {
-  from { text-shadow: 0 0 5px #39ff14, 0 0 10px #00ffcc; }
-  to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #39ff14; }
+@keyframes neonGlow{
+from{ text-shadow:0 0 5px #39ff14,0 0 10px #00ffcc;}
+to{ text-shadow:0 0 20px #00ffcc,0 0 40px #39ff14;}
 }
 
-.fade-in { opacity: 0; transform: translateY(20px); animation: fadeInMove 1s forwards; }
-@keyframes fadeInMove { to { opacity: 1; transform: translateY(0); } }
-
-.retro-button {
-  font-family: 'Press Start 2P', monospace;
-  background: linear-gradient(to right, #ff0000, #00ff00);
-  border: 2px solid #fff;
-  color: black;
-  padding: 30px 60px;
-  font-size: 1.3em;
-  text-transform: uppercase;
-  box-shadow: 0 0 20px #ff0000, 0 0 30px #00ff00;
-  transition: 0.3s;
-  cursor: pointer;
-  margin: 20px 0;
-  position: relative;
-  z-index: 2;
+.fade-in{
+opacity:0;
+transform:translateY(20px);
+animation:fadeInMove 1s forwards;
 }
 
-.retro-button:hover {
-  background: black;
-  color: #00ff00;
-  box-shadow: 0 0 40px #ff0000;
+@keyframes fadeInMove{
+to{ opacity:1; transform:translateY(0);}
 }
 
-.square-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 220px;
-  height: 220px;
-  margin: 30px auto;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.1em;
-  text-decoration: none;
-  color: black;
-  background: linear-gradient(135deg, #00ff00, #ff0000);
-  border: 3px solid white;
-  box-shadow: 0 0 25px #00ff00, 0 0 35px #ff0000;
-  transition: 0.3s;
+.retro-button{
+font-family:'Press Start 2P', monospace;
+background:linear-gradient(to right,#ff0000,#00ff00);
+border:2px solid #fff;
+color:black;
+padding:25px 50px;
+font-size:1.2em;
+text-transform:uppercase;
+box-shadow:0 0 20px #ff0000,0 0 30px #00ff00;
+transition:.3s;
+cursor:pointer;
+margin:20px 0;
 }
 
-.square-button:hover {
-  background: black;
-  color: #00ff00;
-  box-shadow: 0 0 50px #ff0000;
-  transform: scale(1.05);
+.retro-button:hover{
+background:black;
+color:#00ff00;
+box-shadow:0 0 40px #ff0000;
 }
 
-.social-menu {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  padding: 10px;
-  border-radius: 0 10px 10px 0;
-  width: 60px;
-  transition: width 0.3s ease;
-  overflow: hidden;
-  z-index: 10001;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.square-button{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:220px;
+height:220px;
+margin:30px auto;
+font-family:'Orbitron', sans-serif;
+font-size:1.1em;
+text-decoration:none;
+color:black;
+background:linear-gradient(135deg,#00ff00,#ff0000);
+border:3px solid white;
+box-shadow:0 0 25px #00ff00,0 0 35px #ff0000;
+transition:.3s;
 }
 
-.social-menu:hover { width: 280px; }
-.social-menu a {
-  display: flex;
-  align-items: center;
-  color: #00ff00;
-  font-size: 1.2em;
-  padding: 10px;
-  text-decoration: none;
-}
-.social-menu a i { margin-right: 10px; transition: transform 0.3s ease; }
-.social-menu:hover a i { transform: scale(1.2); }
-.social-menu a::after {
-  content: attr(aria-label);
-  color: #00ff00;
-  margin-left: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateX(-10px);
-  white-space: nowrap;
-}
-.social-menu:hover a::after { opacity: 1; transform: translateX(0); }
-
-.parallax {
-  position: relative;
-  width: 100vw;
-  height: 120vh;
-  background-image: url('strona-internetowa.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-top: 2px solid rgba(255,0,0,0.3);
-  border-bottom: 2px solid rgba(0,255,0,0.3);
-  transition: filter 0.5s ease;
-  z-index: 1;
+.square-button:hover{
+background:black;
+color:#00ff00;
+box-shadow:0 0 50px #ff0000;
+transform:scale(1.05);
 }
 
-.blurred { filter: blur(5px); }
+/* NOWA SEKCJA SPOTIFY */
 
-.overlay {
-  position: fixed;
-  top: 100%;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.95);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  z-index: 10000;
-  padding: 60px 20px 20px 20px;
-  transition: top 0.8s ease;
-  overflow-y: auto;
+.spotify-section{
+max-width:900px;
+margin:60px auto;
+padding:20px;
 }
 
-.overlay.active { top: 0; }
-
-.overlay h2 {
-  margin-bottom: 20px;
-  font-size: 3em;
-  color: #ff0000;
-  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333;
-  text-align: center;
+.spotify-embeds{
+display:flex;
+flex-direction:column;
+gap:30px;
+margin-bottom:30px;
 }
 
-.language-switch {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 10px;
-  z-index: 10010;
+/* SOCIAL MENU */
+
+.social-menu{
+position:fixed;
+top:50%;
+left:0;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.6);
+padding:10px;
+border-radius:0 10px 10px 0;
+width:60px;
+transition:width .3s;
+display:flex;
+flex-direction:column;
+gap:15px;
 }
 
-.language-switch button {
-  background: black;
-  color: #00ff00;
-  border: 2px solid #00ff00;
-  padding: 8px 14px;
-  cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
-  transition: 0.3s;
+.social-menu:hover{ width:260px;}
+
+.social-menu a{
+display:flex;
+align-items:center;
+color:#00ff00;
+font-size:1.2em;
+padding:10px;
+text-decoration:none;
 }
 
-.language-switch button:hover {
-  background: #00ff00;
-  color: black;
+.social-menu a::after{
+content:attr(aria-label);
+margin-left:10px;
+opacity:0;
+transition:.3s;
 }
 
-/* Wyjustowany tekst About */
-.about-content {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
+.social-menu:hover a::after{
+opacity:1;
 }
 
-.note {
-  padding: 25px;
-  background: rgba(0,0,0,0.6);
-  border-radius: 12px;
-  line-height: 1.8;
-  text-align: justify;
+/* PARALLAX */
+
+.parallax{
+width:100vw;
+height:120vh;
+background-image:url('strona-internetowa.png');
+background-size:cover;
+background-position:center;
 }
 
-.discography {
-  border: 2px solid #00ff00;
-  border-radius: 12px;
-  padding: 20px;
-  background: rgba(0,0,0,0.5);
-  text-align: justify;
+.overlay{
+position:fixed;
+top:100%;
+left:0;
+width:100vw;
+height:100vh;
+background:rgba(0,0,0,0.95);
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
+align-items:center;
+padding:60px 20px;
+transition:.8s;
+overflow-y:auto;
 }
 
-.note h3, .discography h3 {
-  margin-bottom: 15px;
-  text-align: center;
+.overlay.active{ top:0;}
+
+footer{
+margin-top:50px;
+font-size:.6em;
+opacity:.6;
 }
 
-ul { padding-left: 20px; }
-ul li { margin-bottom: 12px; }
-
-footer { margin-top: 50px; text-align: center; font-size: 0.6em; opacity: 0.6; z-index: 2; position: relative; }
-
-@media (max-width: 768px) {
-  header { font-size: 2.2em; }
-  .retro-button { padding: 18px 28px; font-size: 0.9em; width: 90%; max-width: 320px; }
-  .parallax { height: 60vh; background-position: center top; }
-  .overlay h2 { font-size: 2em; }
-  .overlay p, .overlay ul li { font-size: 1em; }
-  .square-button { width: 180px; height: 180px; font-size: 1em; }
-  .note { max-width: 95%; }
-}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <div class="social-menu">
-    <a href="https://www.facebook.com/profile.php?id=61580169443672&sk=about_contact_and_basic_info" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://x.com/trzpisu4records/" target="_blank" aria-label="X (Twitter)"><i class="fa-solid fa-arrow-right"></i></a>
-    <a href="https://audiomack.com/trzpisurecords" target="_blank" aria-label="Audiomack"><i class="fa-solid fa-arrow-right"></i></a>
-    <a href="https://instagram.com/trzpisu.records/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://youtube.com/@trzpisu.records" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-    <a href="https://open.spotify.com/artist/5cKkMWjvTyLSTiak2USzst?si=VOAjd2SUQsyDGnz00-Ld7g" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-    <a href="https://soundcloud.com/OHVJPhq5q2oXRJFPfq" target="_blank" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a>
-    <a href="https://tiktok.com/@trzpisu.records" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-  </div>
+<div class="social-menu">
+
+<a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+
+<a href="https://x.com" target="_blank" aria-label="X"><i class="fab fa-twitter"></i></a>
+
+<a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+<a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+
+<a href="https://open.spotify.com/artist/5cKkMWjvTyLSTiak2USzst" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+
+</div>
 </nav>
 
-<header class="neon-header">TO JEST ZIOM !!!</header>
+<header>TO JEST ZIOM !!!</header>
+
+<section class="spotify-section fade-in">
+
+<h2 style="margin-bottom:30px;">
+OSTATNIE UTWORY Z ALBUMU<br>
+GREEN IDOL / GREEN TEA
+</h2>
+
+<p style="margin-bottom:30px;">
+Zapisz na Spotify już teraz
+</p>
+
+<div class="spotify-embeds">
+
+<iframe style="border-radius:12px"
+src="https://open.spotify.com/embed/track/49nHBnCzW4MVnUQsO5wVLk?utm_source=generator&theme=0"
+width="100%" height="352"
+frameborder="0"
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
+
+<iframe style="border-radius:12px"
+src="https://open.spotify.com/embed/track/32dAySdaPuyOOHkdtIk4sc?utm_source=generator&theme=0"
+width="100%" height="352"
+frameborder="0"
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
+
+</div>
+
+<a href="https://open.spotify.com/artist/5cKkMWjvTyLSTiak2USzst"
+target="_blank"
+class="retro-button">
+ZAPISZ NA SPOTIFY
+</a>
+
+</section>
 
 <main>
-  <h2 class="fade-in">TRZPISU</h2>
 
-  <button class="retro-button" onclick="openFilm()">ODTWÓRZ NOWY KLIP</button>
+<h2 class="fade-in">TRZPISU</h2>
 
-  <button class="square-button fade-in" onclick="openAbout()">ABOUT TRZPISU</button>
+<button class="retro-button" onclick="openFilm()">ODTWÓRZ NOWY KLIP</button>
+
+<button class="square-button fade-in" onclick="openAbout()">ABOUT TRZPISU</button>
+
 </main>
 
 <section class="parallax" id="parallax-bg"></section>
 
-<!-- Overlay film -->
-<section id="film-overlay" class="overlay">
-  <h2>NOWY KLIP</h2>
-
-  <iframe 
-    src="https://www.youtube.com/embed/_Vk6btCIbu0"
-    frameborder="0"
-    allow="autoplay; encrypted-media; fullscreen"
-    allowfullscreen
-    style="width:90%; height:70vh; max-width:1200px;">
-  </iframe>
-
-  <a href="https://www.youtube.com/watch?v=_Vk6btCIbu0" target="_blank" class="retro-button">
-    OGLĄDAJ NA YOUTUBE
-  </a>
-
-  <button class="retro-button" onclick="closeFilm()">ZAMKNIJ</button>
-</section>
-
-<!-- Overlay About -->
-<section id="about-overlay" class="overlay">
-  <div class="language-switch">
-    <button onclick="setLang('en')">EN</button>
-    <button onclick="setLang('pl')">PL</button>
-  </div>
-
-  <!-- ENGLISH -->
-  <div id="en" class="about-content" style="display:block;">
-    <h2>TRZPISU</h2>
-    <div class="note">
-      <p><strong>Trzpisu</strong> is a 19-year-old independent artist from Podkarpacie, Poland, emerging strongly in 2025. He has quickly crafted a unique sound characterized by deep bass, immersive atmospheres, and bold experimentation.</p>
-    </div>
-    <div class="note">
-      <p>Inspired by pioneers who pushed creative boundaries, Trzpisu avoids imitation and trends, delivering raw, authentic stories drawn from his personal experiences and artistic vision.</p>
-    </div>
-
-    <div class="discography note">
-      <h3>Discography</h3>
-      <ul>
-        <li><strong>whereyougoin’</strong> - 05.09.2025<br>
-        Debut single blending trap, lo-fi, and urban sounds. Themes: independence, self-discovery, ambition.</li>
-        <li><strong>redgreen</strong> - 17.10.2025<br>
-        Second single with experimental electronic layers. Shows artistic growth and originality.</li>
-        <li><strong>definicja artysty</strong> - 12.12.2025<br>
-        Third single summarizing his debut year. Highlights authenticity, vision, and creative freedom.</li>
-        <li><strong>ONITONIT</strong> – 30.01.2026<br>
-  Fourth single introducing a new freshness and a new wave. Signals a bold creative shift and sets the tone for what’s coming in the new year.
-</li>
-        <li><strong>GREEN IDOL / GREEN TEA</strong> - album<br>
-Dual-concept album released by Trzpisu. The project is split into two artistic sides: 
-<strong>GREEN IDOL</strong>, representing ambition, image, and the rise of a new persona, 
-and <strong>GREEN TEA</strong>, reflecting calmness, reflection, and inner balance. 
-Together they create a contrast between fame and personal authenticity.</li>
-
-<li><strong>GREEN IDOL</strong> - 06.03.2026<br>
-First single from the album "GREEN IDOL / GREEN TEA". A bold and energetic track about identity, 
-public image, and becoming an idol in the modern creative scene.</li>
-
-<li><strong>GREEN TEA</strong> - 06.03.2026<br>
-Second single from the album "GREEN IDOL / GREEN TEA". A calmer and more reflective track 
-focusing on clarity of mind, independence, and artistic balance.</li>
-      </ul>
-    </div>
-
-    <div class="note">
-      <p>As an independent artist, Trzpisu writes, produces, and records all of his music himself. He blends emotional storytelling with advanced production, establishing a strong artistic identity.</p>
-    </div>
-    <div class="note">
-      <p>His work resonates with listeners seeking honesty and originality. Trzpisu continues to push boundaries, preparing for a promising career in the contemporary music scene.</p>
-    </div>
-  </div>
-
-  <!-- POLISH -->
-  <div id="pl" class="about-content" style="display:none;">
-    <h2>TRZPISU</h2>
-    <div class="note">
-      <p><strong>Trzpisu</strong> to 19-letni niezależny artysta z Podkarpacia, który w 2025 roku szybko buduje swoją muzyczną tożsamość. Jego brzmienie charakteryzuje się głębokimi basami, immersyjną atmosferą i odważnymi eksperymentami.</p>
-    </div>
-    <div class="note">
-      <p>Inspirując się pionierami, którzy przesuwali granice muzyki, Trzpisu unika kopiowania trendów, dostarczając surowe, autentyczne historie wynikające z osobistych doświadczeń i wizji artystycznej.</p>
-    </div>
-
-    <div class="discography note">
-      <h3>Dyskografia</h3>
-      <ul>
-        <li><strong>whereyougoin’</strong> - 05.09.2025<br>
-        Debiutancki singiel łączący trap, lo-fi i miejskie brzmienia. Tematy: niezależność, odkrywanie siebie, ambicja.</li>
-        <li><strong>redgreen</strong> - 17.10.2025<br>
-        Drugi singiel z warstwami eksperymentalnej elektroniki. Pokazuje rozwój artystyczny i oryginalność.</li>
-        <li><strong>definicja artysty</strong> - 12.12.2025<br>
-        Trzeci singiel podsumowujący debiutancki rok. Podkreśla autentyczność, wizję i wolność twórczą.</li>
-      </ul>
-    </div>
-
-    <div class="note">
-      <p>Trzpisu sam pisze, produkuje i nagrywa swoją muzykę. Łączy emocjonalne opowieści z nowoczesną produkcją, budując silną tożsamość artystyczną.</p>
-    </div>
-    <div class="note">
-      <p>Jego twórczość trafia do słuchaczy szukających szczerości i oryginalności. Trzpisu nieustannie przesuwa granice, przygotowując się na obiecującą karierę na współczesnej scenie muzycznej.</p>
-    </div>
-  </div>
-
-  <button class="retro-button" onclick="closeAbout()">ZAMKNIJ</button>
-</section>
-
-<h3>CONTACT:</h3>
-<div class="contact-item">
-  <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail" onclick="openEmail()">
-  <div class="contact-info">KLIKNIJ W IKONĘ, ABY ZOBACZYĆ ADRES EMAIL</div>
-</div>
-
-<!-- Overlay email -->
-<section id="email-overlay" class="overlay">
-  <h2>SKONTAKTUJ SIĘ</h2>
-  <p style="font-size:1.5em; margin-bottom:30px;">tpsrecords.contact@gmail.com</p>
-  <button class="retro-button" onclick="closeEmail()">ZAMKNIJ</button>
-</section>
-
 <footer>
-  &copy; 2025 TRZPISU RECORDS. Wszelkie prawa zastrzeżone.
+© 2025 TRZPISU RECORDS
 </footer>
-
-<script>
-function openFilm() {
-  document.getElementById('parallax-bg').classList.add('blurred');
-  document.getElementById('film-overlay').classList.add('active');
-}
-function closeFilm() {
-  document.getElementById('parallax-bg').classList.remove('blurred');
-  document.getElementById('film-overlay').classList.remove('active');
-}
-function openEmail() {
-  document.getElementById('parallax-bg').classList.add('blurred');
-  document.getElementById('email-overlay').classList.add('active');
-}
-function closeEmail() {
-  document.getElementById('parallax-bg').classList.remove('blurred');
-  document.getElementById('email-overlay').classList.remove('active');
-}
-function openAbout() {
-  document.getElementById('parallax-bg').classList.add('blurred');
-  document.getElementById('about-overlay').classList.add('active');
-  document.getElementById('en').style.display = 'block';
-  document.getElementById('pl').style.display = 'none';
-}
-function closeAbout() {
-  document.getElementById('parallax-bg').classList.remove('blurred');
-  document.getElementById('about-overlay').classList.remove('active');
-}
-function setLang(lang) {
-  document.getElementById('en').style.display = lang==='en'?'block':'none';
-  document.getElementById('pl').style.display = lang==='pl'?'block':'none';
-}
-</script>
 
 </body>
 </html>
