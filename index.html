@@ -1,222 +1,336 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>TRZPISU'S OFFICIAL WEBSITE</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family:'Press Start 2P', monospace;
-  color:#00ff00;
-  text-align:center;
-  padding-top:100px;
-  background:#0e0e0e;
-  overflow-x:hidden;
+  font-family: 'Press Start 2P', monospace;
+  color: #00ff00;
+  text-align: center;
+  padding-top: 100px;
+  background-color: #0e0e0e;
+  overflow-x: hidden;
 }
 
 header {
-  font-size:4em;
-  margin-bottom:40px;
-  color:#39ff14;
-  text-shadow:0 0 5px #39ff14,0 0 10px #39ff14,0 0 20px #00ffcc,0 0 40px #00ffcc;
-  animation:neonGlow 2s infinite alternate;
-  font-family:'Orbitron',sans-serif;
-  letter-spacing:2px;
+  font-size: 4em;
+  margin-bottom: 40px;
+  color: #39ff14;
+  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+  animation: neonGlow 2s infinite alternate;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
 }
 
 @keyframes neonGlow {
-  from { text-shadow:0 0 5px #39ff14,0 0 10px #00ffcc; }
-  to { text-shadow:0 0 20px #00ffcc,0 0 40px #39ff14; }
+  from { text-shadow: 0 0 5px #39ff14, 0 0 10px #00ffcc; }
+  to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #39ff14; }
 }
 
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeInMove 1s forwards; }
+@keyframes fadeInMove { to { opacity: 1; transform: translateY(0); } }
+
 .retro-button {
-  font-family:'Press Start 2P', monospace;
-  background:linear-gradient(to right,#ff0000,#00ff00);
-  border:2px solid #fff;
-  color:black;
-  padding:25px 50px;
-  font-size:1.1em;
-  text-transform:uppercase;
-  box-shadow:0 0 20px #ff0000,0 0 30px #00ff00;
-  transition:.3s;
-  cursor:pointer;
-  margin:20px 0;
+  font-family: 'Press Start 2P', monospace;
+  background: linear-gradient(to right, #ff0000, #00ff00);
+  border: 2px solid #fff;
+  color: black;
+  padding: 30px 60px;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px #ff0000, 0 0 30px #00ff00;
+  transition: 0.3s;
+  cursor: pointer;
+  margin: 20px 0;
+  position: relative;
+  z-index: 2;
 }
 
 .retro-button:hover {
-  background:black;
-  color:#00ff00;
-  box-shadow:0 0 40px #ff0000;
+  background: black;
+  color: #00ff00;
+  box-shadow: 0 0 40px #ff0000;
 }
 
 .square-button {
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  width:220px;
-  height:220px;
-  margin:30px auto;
-  font-family:'Orbitron',sans-serif;
-  font-size:1.1em;
-  color:black;
-  background:linear-gradient(135deg,#00ff00,#ff0000);
-  border:3px solid white;
-  box-shadow:0 0 25px #00ff00,0 0 35px #ff0000;
-  transition:.3s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 220px;
+  margin: 30px auto;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  text-decoration: none;
+  color: black;
+  background: linear-gradient(135deg, #00ff00, #ff0000);
+  border: 3px solid white;
+  box-shadow: 0 0 25px #00ff00, 0 0 35px #ff0000;
+  transition: 0.3s;
 }
 
 .square-button:hover {
-  background:black;
-  color:#00ff00;
-  box-shadow:0 0 50px #ff0000;
-  transform:scale(1.05);
+  background: black;
+  color: #00ff00;
+  box-shadow: 0 0 50px #ff0000;
+  transform: scale(1.05);
 }
 
 .social-menu {
-  position:fixed;
-  top:50%;
-  left:0;
-  transform:translateY(-50%);
-  background:rgba(0,0,0,0.6);
-  padding:10px;
-  border-radius:0 10px 10px 0;
-  width:60px;
-  transition:width .3s;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  z-index:10001;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 0 10px 10px 0;
+  width: 60px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.social-menu:hover { width:260px; }
-
+.social-menu:hover { width: 280px; }
 .social-menu a {
-  display:flex;
-  align-items:center;
-  color:#00ff00;
-  font-size:1.2em;
-  padding:10px;
-  text-decoration:none;
+  display: flex;
+  align-items: center;
+  color: #00ff00;
+  font-size: 1.2em;
+  padding: 10px;
+  text-decoration: none;
 }
-
+.social-menu a i { margin-right: 10px; transition: transform 0.3s ease; }
+.social-menu:hover a i { transform: scale(1.2); }
 .social-menu a::after {
-  content:attr(aria-label);
-  color:#00ff00;
-  margin-left:10px;
-  opacity:0;
-  transition:.3s;
+  content: attr(aria-label);
+  color: #00ff00;
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateX(-10px);
+  white-space: nowrap;
 }
-
-.social-menu:hover a::after { opacity:1; }
+.social-menu:hover a::after { opacity: 1; transform: translateX(0); }
 
 .parallax {
-  position:relative;
-  width:100vw;
-  height:120vh;
-  background-image:url('strona,internetowa.png');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  border-top:2px solid rgba(255,0,0,0.3);
-  border-bottom:2px solid rgba(0,255,0,0.3);
+  position: relative;
+  width: 100vw;
+  height: 120vh;
+  background-image: url('strona-internetowa.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top: 2px solid rgba(255,0,0,0.3);
+  border-bottom: 2px solid rgba(0,255,0,0.3);
+  transition: filter 0.5s ease;
+  z-index: 1;
 }
 
-.spotify-section {
-  max-width:900px;
-  margin:60px auto;
-  padding:20px;
+.blurred { filter: blur(5px); }
+
+.overlay {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 10000;
+  padding: 60px 20px 20px 20px;
+  transition: top 0.8s ease;
+  overflow-y: auto;
 }
 
-.spotify-embeds {
-  display:flex;
-  flex-direction:column;
-  gap:30px;
-  margin-bottom:30px;
+.overlay.active { top: 0; }
+
+.overlay h2 {
+  margin-bottom: 20px;
+  font-size: 3em;
+  color: #ff0000;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333;
+  text-align: center;
 }
 
-.contact-item {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:10px;
-  margin-top:20px;
+.language-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 10010;
 }
 
-.contact-item img {
-  width:40px;
-  cursor:pointer;
-  transition:.3s;
-  filter:drop-shadow(0 0 6px #00ff00);
+.language-switch button {
+  background: black;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  transition: 0.3s;
 }
 
-.contact-item img:hover {
-  transform:scale(1.15);
-  filter:drop-shadow(0 0 15px #00ff00);
+.language-switch button:hover {
+  background: #00ff00;
+  color: black;
 }
 
-.contact-info {
-  font-size:0.6em;
-  opacity:0.8;
-}
+/* Piosenki */
+.song-container { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px; margin: 50px auto; max-width: 1200px; }
+.song-button { flex: 1 1 150px; min-width: 150px; }
+.song-description { flex: 2 1 400px; text-align: left; background: rgba(0,0,0,0.6); padding: 20px; border-radius: 12px; line-height: 1.8; }
+.song-cover { flex: 1 1 200px; min-width: 200px; transition: transform 0.3s ease; cursor: pointer; border: 2px solid #00ff00; border-radius: 12px; }
+.song-cover:hover { transform: scale(1.1); }
 
-footer {
-  margin-top:60px;
-  font-size:.6em;
-  opacity:.6;
+@media (max-width: 768px) {
+  header { font-size: 2.2em; }
+  .retro-button { padding: 18px 28px; font-size: 0.9em; width: 90%; max-width: 320px; }
+  .parallax { height: 60vh; background-position: center top; }
+  .overlay h2 { font-size: 2em; }
+  .overlay p, .overlay ul li { font-size: 1em; }
+  .square-button { width: 180px; height: 180px; font-size: 1em; }
+  .note { max-width: 95%; }
 }
-
 </style>
 </head>
 
 <body>
 
 <nav>
-<div class="social-menu">
-<a href="https://www.facebook.com/profile.php?id=61580169443672" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-<a href="https://x.com/trzpisu4records/" target="_blank" aria-label="X"><i class="fa-solid fa-arrow-right"></i></a>
-<a href="https://audiomack.com/trzpisurecords" target="_blank" aria-label="Audiomack"><i class="fa-solid fa-arrow-right"></i></a>
-<a href="https://instagram.com/trzpisu.records/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-<a href="https://youtube.com/@trzpisu.records" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-<a href="https://open.spotify.com/artist/5cKkMWjvTyLSTiak2USzst" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-<a href="https://soundcloud.com/OHVJPhq5q2oXRJFPfq" target="_blank" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a>
-<a href="https://tiktok.com/@trzpisu.records" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-</div>
+  <div class="social-menu">
+    <a href="https://www.facebook.com/profile.php?id=61580169443672&sk=about_contact_and_basic_info" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://x.com/trzpisu4records/" target="_blank" aria-label="X (Twitter)"><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="https://audiomack.com/trzpisurecords" target="_blank" aria-label="Audiomack"><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="https://instagram.com/trzpisu.records/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@trzpisu.records" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://open.spotify.com/artist/5cKkMWjvTyLSTiak2USzst?si=VOAjd2SUQsyDGnz00-Ld7g" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+    <a href="https://soundcloud.com/OHVJPhq5q2oXRJFPfq" target="_blank" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+    <a href="https://tiktok.com/@trzpisu.records" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
 </nav>
 
-<header>TO JEST ZIOM !!!</header>
-
-<section class="spotify-section">
-<h2 style="margin-bottom:30px;">OSTATNIE UTWORY Z ALBUMU<br>GREEN IDOL / GREEN TEA</h2>
-<div class="spotify-embeds">
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/49nHBnCzW4MVnUQsO5wVLk?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/32dAySdaPuyOOHkdtIk4sc?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-</div>
-<a href="https://open.spotify.com/artist/5cKkMWjvTyLSTiak2USzst" target="_blank" class="retro-button">ZAPISZ NA SPOTIFY</a>
-</section>
+<header class="neon-header">TO JEST ZIOM !!!</header>
 
 <main>
-<h2>TRZPISU</h2>
-<button class="retro-button">ODTWÓRZ NOWY KLIP</button>
-<button class="square-button">ABOUT TRZPISU</button>
+  <h2 class="fade-in">TRZPISU</h2>
+
+  <button class="retro-button" onclick="openFilm()">ODTWÓRZ NOWY KLIP</button>
+  <button class="square-button fade-in" onclick="openAbout()">ABOUT TRZPISU</button>
 </main>
 
-<section class="parallax"></section>
+<section class="parallax" id="parallax-bg"></section>
 
-<h3 style="margin-top:80px;">CONTACT</h3>
-<div class="contact-item">
-<a href="mailto:tpsrecords.contact@gmail.com">
-<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">
-</a>
-<div class="contact-info">tpsrecords.contact@gmail.com</div>
+<!-- Piosenki -->
+<div class="song-container">
+  <div class="song-button">
+    <a href="https://distrokid.com/hyperfollow/trzpisu/whereyougoin" target="_blank" class="retro-button">ODTWÓRZ POD HYPE</a>
+  </div>
+  <div class="song-description">
+    <strong>whereyougoin’</strong> - 05.09.2025<br>
+    Debiutancki singiel łączący trap, lo-fi i miejskie brzmienia. Tematy: niezależność, odkrywanie siebie, ambicja.
+  </div>
+  <div class="song-cover">
+    <img src="whereyougoin-spotify.png" alt="WhereYouGoin' Cover" style="width:100%; border-radius:12px;">
+  </div>
 </div>
 
-<footer>© 2025 TRZPISU RECORDS</footer>
+<div class="song-container">
+  <div class="song-button">
+    <a href="https://distrokid.com/hyperfollow/trzpisu/redgreen" target="_blank" class="retro-button">ODTWÓRZ POD HYPE</a>
+  </div>
+  <div class="song-description">
+    <strong>redgreen</strong> - 17.10.2025<br>
+    Drugi singiel z warstwami eksperymentalnej elektroniki. Pokazuje rozwój artystyczny i oryginalność.
+  </div>
+  <div class="song-cover">
+    <img src="redgreen.jpeg" alt="RedGreen Cover" style="width:100%; border-radius:12px;">
+  </div>
+</div>
+
+<div class="song-container">
+  <div class="song-button">
+    <a href="https://distrokid.com/hyperfollow/trzpisu/definicja-artysty" target="_blank" class="retro-button">ODTWÓRZ POD HYPE</a>
+  </div>
+  <div class="song-description">
+    <strong>definicja artysty</strong> - 12.12.2025<br>
+    Trzeci singiel podsumowujący debiutancki rok. Podkreśla autentyczność, wizję i wolność twórczą.
+  </div>
+  <div class="song-cover">
+    <img src="definicja artysty spotify.png" alt="Definicja Artysty Cover" style="width:100%; border-radius:12px;">
+  </div>
+</div>
+
+<div class="song-container">
+  <div class="song-button">
+    <a href="https://distrokid.com/hyperfollow/trzpisu/onitonit" target="_blank" class="retro-button">ODTWÓRZ POD HYPE</a>
+  </div>
+  <div class="song-description">
+    <strong>ONITONIT</strong> – 30.01.2026<br>
+    Fourth single introducing a new freshness and a new wave. Signals a bold creative shift and sets the tone for what’s coming in the new year.
+  </div>
+  <div class="song-cover">
+    <img src="ON IT.png" alt="ONITONIT Cover" style="width:100%; border-radius:12px;">
+  </div>
+</div>
+
+<div class="song-container">
+  <div class="song-button">
+    <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">ODTWÓRZ POD HYPE</a>
+  </div>
+  <div class="song-description">
+    <strong>GREEN IDOL / GREEN TEA</strong> - album<br>
+    Dual-concept album released by Trzpisu. The project is split into two artistic sides: 
+    <strong>GREEN IDOL</strong>, representing ambition, image, and the rise of a new persona, 
+    and <strong>GREEN TEA</strong>, reflecting calmness, reflection, and inner balance. 
+    Together they create a contrast between fame and personal authenticity.
+  </div>
+  <div class="song-cover">
+    <img src="GREENIDOL" alt="GREEN IDOL / GREEN TEA Cover" style="width:100%; border-radius:12px;">
+  </div>
+</div>
+
+<div class="song-container">
+  <div class="song-button">
+    <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">ODTWÓRZ POD HYPE</a>
+  </div>
+  <div class="song-description">
+    <strong>GREEN IDOL</strong> - 06.03.2026<br>
+    First single from the album "GREEN IDOL / GREEN TEA". A bold and energetic track about identity, public image, and becoming an idol in the modern creative scene.
+  </div>
+  <div class="song-cover">
+    <img src="GREENIDOL" alt="GREEN IDOL Cover" style="width:100%; border-radius:12px;">
+  </div>
+</div>
+
+<div class="song-container">
+  <div class="song-button">
+    <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">ODTWÓRZ POD HYPE</a>
+  </div>
+  <div class="song-description">
+    <strong>GREEN TEA</strong> - 06.03.2026<br>
+    Second single from the album "GREEN IDOL / GREEN TEA". A calmer and more reflective track focusing on clarity of mind, independence, and artistic balance.
+  </div>
+  <div class="song-cover">
+    <img src="GREENTEA.spotify.png" alt="GREEN TEA Cover" style="width:100%; border-radius:12px;">
+  </div>
+</div>
 
 </body>
 </html>
