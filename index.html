@@ -215,6 +215,68 @@ header {
   .discography li .disc-left, .discography li .disc-right { flex:1 1 100%; text-align:center; margin-right:0; }
   .discography li .disc-right img { margin-top:10px; width:80%; max-width:200px; }
 }
+  .discography li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /* pozwala na układ w kolumny na małych ekranach */
+  background: rgba(0,0,0,0.6);
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  gap: 20px;
+}
+
+.disc-left {
+  flex: 1 1 300px; /* zajmuje minimum 300px, elastycznie rośnie */
+  min-width: 250px;
+  text-align: left;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  margin-right: 20px;
+}
+
+.disc-left .retro-button {
+  display: block;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+
+.disc-right {
+  flex: 0 0 150px;
+  min-width: 150px;
+  text-align: center;
+}
+
+.disc-right img {
+  width: 100%;  /* dopasowanie do szerokości kontenera */
+  height: auto;
+  border-radius: 12px;
+}
+
+/* responsywność */
+@media (max-width: 1024px) {
+  .discography li {
+    flex-wrap: wrap;
+  }
+  .disc-left, .disc-right {
+    flex: 1 1 100%; /* każdy element zajmuje pełną szerokość */
+    text-align: center;
+    margin-right: 0;
+  }
+  .disc-right img {
+    max-width: 200px;
+    margin: 10px auto 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  header { font-size: 2em; }
+  .retro-button { font-size: 0.9em; padding: 15px 25px; }
+  .square-button { width: 180px; height: 180px; font-size: 1em; }
+  .overlay h2 { font-size: 1.8em; }
+  .overlay p, .overlay ul li { font-size: 0.95em; }
+}
 </style>
 </head>
 <body>
