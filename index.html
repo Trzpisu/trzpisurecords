@@ -47,6 +47,8 @@ header {
   transition:.3s;
   cursor:pointer;
   margin:20px 0;
+  display:block;
+  word-wrap: break-word;
 }
 
 .retro-button:hover {
@@ -162,7 +164,7 @@ header {
 
 .song-button { flex:1 1 180px; min-width:180px; text-align:center; }
 
-.song-description { flex:2 1 400px; text-align:left; background:rgba(0,0,0,0.6); padding:20px; border-radius:12px; line-height:1.8; }
+.song-description { flex:2 1 400px; text-align:left; background:rgba(0,0,0,0.6); padding:20px; border-radius:12px; line-height:1.8; word-wrap: break-word; overflow-wrap: anywhere; }
 
 .song-cover { flex:1 1 200px; min-width:200px; transition:transform 0.3s ease; cursor:pointer; border:2px solid #00ff00; border-radius:12px; }
 
@@ -173,17 +175,29 @@ header {
 .discography li {
   display:flex;
   justify-content:space-between;
-  align-items:center;
+  align-items:flex-start;
   background:rgba(0,0,0,0.6);
   padding:15px 20px;
   margin-bottom:20px;
   border-radius:12px;
   gap:20px;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
-.discography li .disc-left { flex:1 1 300px; text-align:left; }
-.discography li .disc-right { flex:0 0 150px; text-align:right; }
-.discography li img { width:150px; border-radius:12px; }
+.discography li .disc-left { 
+  flex: 1 1 300px; 
+  text-align:left; 
+  word-break: break-word; 
+  overflow-wrap: anywhere; 
+  min-width: 250px;
+  margin-right:20px;
+}
+.discography li .disc-right { 
+  flex: 0 0 150px; 
+  text-align:right; 
+  min-width: 150px; 
+}
+.discography li .disc-right img { width:150px; border-radius:12px; max-width:100%; height:auto; }
+.discography li .disc-left .retro-button { display:block; margin-bottom:10px; }
 
 /* Overlay centrowanie i ograniczenie szerokości */
 .overlay .about-content { max-width:900px; width:90%; margin:0 auto; text-align:left; }
@@ -198,8 +212,8 @@ header {
   .square-button{width:180px;height:180px;font-size:1em;} 
   .note{max-width:95%;} 
   .discography li { flex-direction:column; text-align:center; }
-  .discography li .disc-left, .discography li .disc-right { flex:1 1 100%; text-align:center; }
-  .discography li img { margin-top:10px; width:80%; max-width:200px; }
+  .discography li .disc-left, .discography li .disc-right { flex:1 1 100%; text-align:center; margin-right:0; }
+  .discography li .disc-right img { margin-top:10px; width:80%; max-width:200px; }
 }
 </style>
 </head>
@@ -246,7 +260,7 @@ header {
 
   <!-- ENGLISH -->
   <div id="en" class="about-content" style="display:block;">
-    <h2>TRZPISU</h2>
+<h2>TRZPISU</h2>
     <div class="note">
       <p><strong>Trzpisu</strong> is a 19-year-old independent artist from Podkarpacie, Poland, emerging strongly in 2025. He has quickly crafted a unique sound characterized by deep bass, immersive atmospheres, and bold experimentation.</p>
     </div>
@@ -304,12 +318,11 @@ header {
             <img src="GREENIDOL,GREENTEA.spotify.png" alt="GREEN TEA Cover" style="width:150px; border-radius:12px; margin-top:5px;">
                   </li>
       </ul>
-    </div>
   </div>
 
   <!-- POLISH -->
   <div id="pl" class="about-content" style="display:none;">
-    <h2>TRZPISU</h2>
+      <h2>TRZPISU</h2>
     <div class="note">
       <p><strong>Trzpisu</strong> to 19-letni niezależny artysta z Podkarpacia, który w 2025 roku szybko buduje swoją muzyczną tożsamość. Jego brzmienie charakteryzuje się głębokimi basami, immersyjną atmosferą i odważnymi eksperymentami.</p>
     </div>
@@ -366,8 +379,6 @@ header {
             Refleksyjny singiel o klarowności umysłu, niezależności i balansie artystycznym.<br>
             <img src="GREENIDOL,GREENTEA.spotify.png" alt="GREEN TEA Cover" style="width:150px; border-radius:12px; margin-top:5px;">
           </li>
-      </ul>
-    </div>
   </div>
 
   <button class="retro-button" onclick="closeAbout()">ZAMKNIJ</button>
@@ -420,4 +431,3 @@ function setLang(lang) {
 
 </body>
 </html>
-``
