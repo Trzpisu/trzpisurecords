@@ -69,102 +69,155 @@ header { font-size:4em; margin-bottom:40px; color:#39ff14; text-shadow:0 0 5px #
   <button class="retro-button" onclick="openFilm()">ODTWÓRZ NOWY KLIP</button>
   <button class="square-button fade-in" onclick="openAbout()">ABOUT TRZPISU</button>
 </main>
+<!-- Overlay About -->
+<section id="about-overlay" class="overlay">
+  <div class="language-switch">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('pl')">PL</button>
+  </div>
 
 <section class="parallax" id="parallax-bg"></section>
 
-<!-- Songs -->
-<div class="song-container">
-  <div class="song-button">
-    <a href="https://distrokid.com/hyperfollow/trzpisu/whereyougoin" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a>
+ <!-- Overlay About -->
+<section id="about-overlay" class="overlay">
+  <div class="language-switch">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('pl')">PL</button>
   </div>
-  <div class="song-description">
-    <strong>whereyougoin’</strong> - 05.09.2025<br>
-    Debiutancki singiel łączący trap, lo-fi i miejskie brzmienia. Tematy: niezależność, odkrywanie siebie, ambicja.
-  </div>
-  <div class="song-cover">
-    <img src="whereyougoin-spotify.png" alt="WhereYouGoin' Cover" style="width:100%; border-radius:12px;">
-  </div>
-</div>
 
-<div class="song-container">
-  <div class="song-button">
-    <a href="https://distrokid.com/hyperfollow/trzpisu/redgreen" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a>
-  </div>
-  <div class="song-description">
-    <strong>redgreen</strong> - 17.10.2025<br>
-    Drugi singiel z warstwami eksperymentalnej elektroniki. Pokazuje rozwój artystyczny i oryginalność.
-  </div>
-  <div class="song-cover">
-    <img src="redgreen.jpeg" alt="RedGreen Cover" style="width:100%; border-radius:12px;">
-  </div>
-</div>
+  <!-- ENGLISH -->
+  <div id="en" class="about-content" style="display:block;">
+    <h2>TRZPISU</h2>
+    <div class="note">
+      <p><strong>Trzpisu</strong> is a 19-year-old independent artist from Podkarpacie, Poland, emerging strongly in 2025. He has quickly crafted a unique sound characterized by deep bass, immersive atmospheres, and bold experimentation.</p>
+    </div>
+    <div class="note">
+      <p>Inspired by pioneers who pushed creative boundaries, Trzpisu avoids imitation and trends, delivering raw, authentic stories drawn from his personal experiences and artistic vision.</p>
+    </div>
 
-<div class="song-container">
-  <div class="song-button">
-    <a href="https://distrokid.com/hyperfollow/trzpisu/definicja-artysty" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a>
-  </div>
-  <div class="song-description">
-    <strong>definicja artysty</strong> - 12.12.2025<br>
-    Trzeci singiel podsumowujący debiutancki rok. Podkreśla autentyczność, wizję i wolność twórczą.
-  </div>
-  <div class="song-cover">
-    <img src="definicja artysty spotify.png" alt="Definicja Artysty Cover" style="width:100%; border-radius:12px;">
-  </div>
-</div>
+    <div class="discography note">
+      <h3>Discography</h3>
+      <ul>
+        <li>
+          <a href="https://distrokid.com/hyperfollow/trzpisu/whereyougoin" target="_blank" class="retro-button">SEE ON STREAMING PLATFORMS</a><br>
+          <strong>whereyougoin’</strong> - 05.09.2025<br>
+          Debut single blending trap, lo-fi, and urban sounds. Themes: independence, self-discovery, ambition.<br>
+          <img src="whereyougoin-spotify.png" alt="WhereYouGoin' Cover" style="width:150px; border-radius:12px; margin-top:5px;">
+        </li>
+        <li>
+          <a href="https://distrokid.com/hyperfollow/trzpisu/redgreen" target="_blank" class="retro-button">SEE ON STREAMING PLATFORMS</a><br>
+          <strong>redgreen</strong> - 17.10.2025<br>
+          Second single with experimental electronic layers. Shows artistic growth and originality.<br>
+          <img src="redgreen.jpeg" alt="RedGreen Cover" style="width:150px; border-radius:12px; margin-top:5px;">
+        </li>
+        <li>
+          <a href="https://distrokid.com/hyperfollow/trzpisu/definicja-artysty" target="_blank" class="retro-button">SEE ON STREAMING PLATFORMS</a><br>
+          <strong>definicja artysty</strong> - 12.12.2025<br>
+          Third single summarizing his debut year. Highlights authenticity, vision, and creative freedom.<br>
+          <img src="definicja artysty spotify.png" alt="Definicja Artysty Cover" style="width:150px; border-radius:12px; margin-top:5px;">
+        </li>
+        <li>
+          <a href="https://distrokid.com/hyperfollow/trzpisu/onitonit" target="_blank" class="retro-button">SEE ON STREAMING PLATFORMS</a><br>
+          <strong>ONITONIT</strong> – 30.01.2026<br>
+          Fourth single introducing a new freshness and a new wave. Signals a bold creative shift and sets the tone for the new year.<br>
+          <img src="ON IT.png" alt="ONITONIT Cover" style="width:150px; border-radius:12px; margin-top:5px;">
+        </li>
+        <li>
+          <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">SEE ON STREAMING PLATFORMS</a><br>
+          <strong>GREEN IDOL / GREEN TEA</strong> - album<br>
+          Dual-concept album: <strong>GREEN IDOL</strong> - ambitious & energetic, <strong>GREEN TEA</strong> - calm & reflective. Contrasts fame with personal authenticity.<br>
+          <img src="GREENIDOL" alt="GREEN IDOL / GREEN TEA Cover" style="width:150px; border-radius:12px; margin-top:5px;">
+        </li>
+        <li>
+          <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">SEE ON STREAMING PLATFORMS</a><br>
+          <strong>GREEN IDOL</strong> - 06.03.2026<br>
+          Energetic single about identity, public image, and becoming an idol.<br>
+          <img src="GREENIDOL" alt="GREEN IDOL Cover" style="width:150px; border-radius:12px; margin-top:5px;">
+        </li>
+        <li>
+          <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">SEE ON STREAMING PLATFORMS</a><br>
+          <strong>GREEN TEA</strong> - 06.03.2026<br>
+          Reflective single about clarity of mind, independence, and artistic balance.<br>
+          <img src="GREENTEA.spotify.png" alt="GREEN TEA Cover" style="width:150px; border-radius:12px; margin-top:5px;">
+        </li>
+      </ul>
+    </div>
 
-<div class="song-container">
-  <div class="song-button">
-    <a href="https://distrokid.com/hyperfollow/trzpisu/onitonit" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a>
+    <div class="note">
+      <p>As an independent artist, Trzpisu writes, produces, and records all of his music himself. He blends emotional storytelling with advanced production, establishing a strong artistic identity.</p>
+    </div>
+    <div class="note">
+      <p>His work resonates with listeners seeking honesty and originality. Trzpisu continues to push boundaries, preparing for a promising career in the contemporary music scene.</p>
+    </div>
   </div>
-  <div class="song-description">
-    <strong>ONITONIT</strong> – 30.01.2026<br>
-    Fourth single introducing a new freshness and a new wave. Signals a bold creative shift and sets the tone for what’s coming in the new year.
-  </div>
-  <div class="song-cover">
-    <img src="ON IT.png" alt="ONITONIT Cover" style="width:100%; border-radius:12px;">
-  </div>
-</div>
 
-<div class="song-container">
-  <div class="song-button">
-    <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a>
-  </div>
-  <div class="song-description">
-    <strong>GREEN IDOL / GREEN TEA</strong> - album<br>
-    Dual-concept album released by Trzpisu. <strong>GREEN IDOL</strong> - ambitny i energetyczny, <strong>GREEN TEA</strong> - spokojny i refleksyjny. Tworzą kontrast między sławą a autentycznością.
-  </div>
-  <div class="song-cover">
-    <img src="GREENIDOL" alt="GREEN IDOL / GREEN TEA Cover" style="width:100%; border-radius:12px;">
-  </div>
-</div>
+  <!-- POLISH -->
+  <div id="pl" class="about-content" style="display:none;">
+    <h2>TRZPISU</h2>
+    <div class="note">
+      <p><strong>Trzpisu</strong> to 19-letni niezależny artysta z Podkarpacia, który w 2025 roku szybko buduje swoją muzyczną tożsamość. Jego brzmienie charakteryzuje się głębokimi basami, immersyjną atmosferą i odważnymi eksperymentami.</p>
+    </div>
+    <div class="note">
+      <p>Inspirując się pionierami, którzy przesuwali granice muzyki, Trzpisu unika kopiowania trendów, dostarczając surowe, autentyczne historie wynikające z osobistych doświadczeń i wizji artystycznej.</p>
+    </div>
 
-<div class="song-container">
-  <div class="song-button">
-    <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a>
-  </div>
-  <div class="song-description">
-    <strong>GREEN IDOL</strong> - 06.03.2026<br>
-    Energetyczny singiel o tożsamości, wizerunku i drodze do bycia idolem.
-  </div>
-  <div class="song-cover">
-    <img src="GREENIDOL" alt="GREEN IDOL Cover" style="width:100%; border-radius:12px;">
-  </div>
-</div>
+    <div class="discography note">
+      <h3>Dyskografia</h3>
+      <ul>
+        <li>
+          <a href="https://distrokid.com/hyperfollow/trzpisu/whereyougoin" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a><br>
+          <strong>whereyougoin’</strong> - 05.09.2025<br>
+          Debiutancki singiel łączący trap, lo-fi i miejskie brzmienia. Tematy: niezależność, odkrywanie siebie, ambicja.<br>
+          <img src="whereyougoin-spotify.png" alt="WhereYouGoin' Cover" style="width:150px; border-radius:12px; margin-top:5px;">
+        </li>
+        <li>
+          <a href="https://distrokid.com/hyperfollow/trzpisu/redgreen" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a><br>
+          <strong>redgreen</strong> - 17.10.2025<br>
+          Drugi singiel z warstwami eksperymentalnej elektroniki. Pokazuje rozwój artystyczny i oryginalność.<br>
+          <img src="redgreen.jpeg" alt="RedGreen Cover" style="width:150px; border-radius:12px; margin-top:5px;">
+        </li>
+        <li>
+          <a href="https://distrokid.com/hyperfollow/trzpisu/definicja-artysty" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a><br>
+          <strong>definicja artysty</strong> - 12.12.2025<br>
+          Trzeci singiel podsumowujący debiutancki rok. Podkreśla autentyczność, wizję i wolność twórczą.<br>
+          <img src="definicja artysty spotify.png" alt="Definicja Artysty Cover" style="width:150px; border-radius:12px; margin-top:5px;">
+        </li>
+        <li>
+          <a href="https://distrokid.com/hyperfollow/trzpisu/onitonit" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a><br>
+          <strong>ONITONIT</strong> – 30.01.2026<br>
+          Czwarty singiel wprowadzający nową świeżość i nową falę. Sygnalizuje odważną zmianę kreatywną i nadaje ton na nowy rok.<br>
+          <img src="ON IT.png" alt="ONITONIT Cover" style="width:150px; border-radius:12px; margin-top:5px;">
+        </li>
+        <li>
+          <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a><br>
+          <strong>GREEN IDOL / GREEN TEA</strong> - album<br>
+          Album dual-konceptowy: <strong>GREEN IDOL</strong> - ambitny i energetyczny, <strong>GREEN TEA</strong> - spokojny i refleksyjny. Kontrast między sławą a autentycznością.<br>
+          <img src="GREENIDOL" alt="GREEN IDOL / GREEN TEA Cover" style="width:150px; border-radius:12px; margin-top:5px;">
+        </li>
+        <li>
+          <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a><br>
+          <strong>GREEN IDOL</strong> - 06.03.2026<br>
+          Energetyczny singiel o tożsamości, wizerunku i drodze do bycia idolem.<br>
+          <img src="GREENIDOL" alt="GREEN IDOL Cover" style="width:150px; border-radius:12px; margin-top:5px;">
+        </li>
+        <li>
+          <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a><br>
+          <strong>GREEN TEA</strong> - 06.03.2026<br>
+          Refleksyjny singiel o klarowności umysłu, niezależności i balansie artystycznym.<br>
+          <img src="GREENTEA.spotify.png" alt="GREEN TEA Cover" style="width:150px; border-radius:12px; margin-top:5px;">
+        </li>
+      </ul>
+    </div>
 
-<div class="song-container">
-  <div class="song-button">
-    <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a>
+    <div class="note">
+      <p>Trzpisu sam pisze, produkuje i nagrywa swoją muzykę. Łączy emocjonalne opowieści z nowoczesną produkcją, budując silną tożsamość artystyczną.</p>
+    </div>
+    <div class="note">
+      <p>Jego twórczość trafia do słuchaczy szukających szczerości i oryginalności. Trzpisu nieustannie przesuwa granice, przygotowując się na obiecującą karierę na współczesnej scenie muzycznej.</p>
+    </div>
   </div>
-  <div class="song-description">
-    <strong>GREEN TEA</strong> - 06.03.2026<br>
-    Refleksyjny singiel o klarowności umysłu, niezależności i balansie artystycznym.
-  </div>
-  <div class="song-cover">
-    <img src="GREENTEA.spotify.png" alt="GREEN TEA Cover" style="width:100%; border-radius:12px;">
-  </div>
-</div>
-  
- <button class="retro-button" onclick="closeAbout()">ZAMKNIJ</button>
+
+  <button class="retro-button" onclick="closeAbout()">ZAMKNIJ</button>
 </section>
 
 <h3>CONTACT:</h3>
