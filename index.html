@@ -390,7 +390,13 @@ margin-top:40px;
     <button onclick="setLang('pl')">PL</button>
   </div>
 
-<!-- ENGLISH -->
+<!-- LANGUAGE SWITCH -->
+<div class="language-switch">
+  <button onclick="showLanguage('en')">EN</button>
+  <button onclick="showLanguage('pl')">PL</button>
+</div>
+
+<!-- ENGLISH SECTION -->
 <div id="en" class="about-content" style="display:block;">
   <h2>TRZPISU</h2>
   <div class="note">
@@ -400,7 +406,7 @@ margin-top:40px;
   <hr style="margin:50px 0; border:1px solid #00ff00;">
 
   <div class="discography note">
-    <h3 style="margin-bottom:25px;">DISCOGRAPHY</h3>
+    <h3>DISCOGRAPHY</h3>
     <ul>
       <li>
         <div class="disc-left">
@@ -494,9 +500,9 @@ margin-top:40px;
       </li>
     </ul>
   </div>
+</div>
 
-
-<!-- POLISH -->
+<!-- POLISH SECTION -->
 <div id="pl" class="about-content" style="display:none;">
   <h2>TRZPISU</h2>
   <div class="note">
@@ -506,7 +512,7 @@ margin-top:40px;
   <hr style="margin:50px 0; border:1px solid #00ff00;">
 
   <div class="discography note">
-    <h3 style="margin-bottom:25px;">DYSKOGRAFIA</h3>
+    <h3>DYSKOGRAFIA</h3>
     <ul>
       <li>
         <div class="disc-left">
@@ -599,7 +605,15 @@ margin-top:40px;
         </div>
       </li>
     </ul>
-  </div>
+</div>
+
+<!-- JS DO PRZEŁĄCZANIA JĘZYKA -->
+<script>
+function showLanguage(lang) {
+  document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
+  document.getElementById('pl').style.display = (lang === 'pl') ? 'block' : 'none';
+}
+</script>
 
 
   <button class="retro-button" onclick="closeAbout()">ZAMKNIJ</button>
