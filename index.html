@@ -9,274 +9,298 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
 
-body {
-  font-family:'Press Start 2P', monospace;
-  color:#00ff00;
-  text-align:center;
-  padding-top:100px;
-  background:#0e0e0e;
-  overflow-x:hidden;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-header {
-  font-size:4em;
-  margin-bottom:40px;
-  color:#39ff14;
-  text-shadow:0 0 5px #39ff14,0 0 10px #39ff14,0 0 20px #00ffcc,0 0 40px #00ffcc;
-  animation:neonGlow 2s infinite alternate;
-  font-family:'Orbitron',sans-serif;
-  letter-spacing:2px;
+body{
+font-family:'Press Start 2P', monospace;
+color:#00ff00;
+text-align:center;
+padding-top:100px;
+background:#0e0e0e;
+overflow-x:hidden;
 }
 
-@keyframes neonGlow {
-  from { text-shadow:0 0 5px #39ff14,0 0 10px #00ffcc; }
-  to { text-shadow:0 0 20px #00ffcc,0 0 40px #39ff14; }
+
+/* HEADER */
+
+header{
+font-size:4em;
+margin-bottom:40px;
+color:#39ff14;
+text-shadow:0 0 5px #39ff14,0 0 10px #39ff14,0 0 20px #00ffcc,0 0 40px #00ffcc;
+animation:neonGlow 2s infinite alternate;
+font-family:'Orbitron',sans-serif;
+letter-spacing:2px;
 }
 
-.retro-button {
-  font-family:'Press Start 2P', monospace;
-  background:linear-gradient(to right,#ff0000,#00ff00);
-  border:2px solid #fff;
-  color:black;
-  padding:25px 50px;
-  font-size:1.1em;
-  text-transform:uppercase;
-  box-shadow:0 0 20px #ff0000,0 0 30px #00ff00;
-  transition:.3s;
-  cursor:pointer;
-  margin:20px 0;
-  display:block;
-  word-wrap: break-word;
+@keyframes neonGlow{
+from{ text-shadow:0 0 5px #39ff14,0 0 10px #00ffcc; }
+to{ text-shadow:0 0 20px #00ffcc,0 0 40px #39ff14; }
 }
 
-.retro-button:hover {
-  background:black;
-  color:#00ff00;
-  box-shadow:0 0 40px #ff0000;
+
+/* PRZYCISKI */
+
+.retro-button{
+font-family:'Press Start 2P', monospace;
+background:linear-gradient(to right,#ff0000,#00ff00);
+border:2px solid #fff;
+color:black;
+padding:25px 50px;
+font-size:1.1em;
+text-transform:uppercase;
+box-shadow:0 0 20px #ff0000,0 0 30px #00ff00;
+transition:.3s;
+cursor:pointer;
+margin:20px 0;
+display:block;
+word-wrap:break-word;
 }
 
-.square-button {
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  width:220px;
-  height:220px;
-  margin:30px auto;
-  font-family:'Orbitron',sans-serif;
-  font-size:1.1em;
-  color:black;
-  background:linear-gradient(135deg,#00ff00,#ff0000);
-  border:3px solid white;
-  box-shadow:0 0 25px #00ff00,0 0 35px #ff0000;
-  transition:.3s;
+.retro-button:hover{
+background:black;
+color:#00ff00;
+box-shadow:0 0 40px #ff0000;
 }
 
-.square-button:hover {
-  background:black;
-  color:#00ff00;
-  box-shadow:0 0 50px #ff0000;
-  transform:scale(1.05);
+
+.square-button{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:220px;
+height:220px;
+margin:30px auto;
+font-family:'Orbitron',sans-serif;
+font-size:1.1em;
+color:black;
+background:linear-gradient(135deg,#00ff00,#ff0000);
+border:3px solid white;
+box-shadow:0 0 25px #00ff00,0 0 35px #ff0000;
+transition:.3s;
 }
 
-.social-menu {
-  position:fixed;
-  top:50%;
-  left:0;
-  transform:translateY(-50%);
-  background:rgba(0,0,0,0.6);
-  padding:10px;
-  border-radius:0 10px 10px 0;
-  width:60px;
-  transition:width .3s;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  z-index:10001;
+.square-button:hover{
+background:black;
+color:#00ff00;
+box-shadow:0 0 50px #ff0000;
+transform:scale(1.05);
 }
 
-.social-menu:hover { width:260px; }
 
-.social-menu a {
-  display:flex;
-  align-items:center;
-  color:#00ff00;
-  font-size:1.2em;
-  padding:10px;
-  text-decoration:none;
+/* PRZYCISKI NA GÓRZE */
+
+.main-buttons{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:20px;
 }
 
-.social-menu a::after {
-  content:attr(aria-label);
-  color:#00ff00;
-  margin-left:10px;
-  opacity:0;
-  transition:.3s;
+
+/* SOCIAL MENU */
+
+.social-menu{
+position:fixed;
+top:50%;
+left:0;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.6);
+padding:10px;
+border-radius:0 10px 10px 0;
+width:60px;
+transition:width .3s;
+display:flex;
+flex-direction:column;
+gap:15px;
+z-index:10001;
 }
 
-.social-menu:hover a::after { opacity:1; }
+.social-menu:hover{ width:260px; }
 
-.parallax {
-  position:relative;
-  width:100vw;
-  height:120vh;
-  background-image:url('strona,internetowa.png');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  border-top:2px solid rgba(255,0,0,0.3);
-  border-bottom:2px solid rgba(0,255,0,0.3);
-  transition:filter 0.5s ease;
-  z-index:1;
+.social-menu a{
+display:flex;
+align-items:center;
+color:#00ff00;
+font-size:1.2em;
+padding:10px;
+text-decoration:none;
 }
 
-.blurred { filter:blur(5px); }
-
-.overlay {
-  position:fixed;
-  top:100%;
-  left:0;
-  width:100vw;
-  height:100vh;
-  background:rgba(0,0,0,0.95);
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  align-items:center;
-  z-index:10000;
-  padding:60px 20px 20px 20px;
-  transition:top 0.8s ease;
-  overflow-y:auto;
+.social-menu a::after{
+content:attr(aria-label);
+color:#00ff00;
+margin-left:10px;
+opacity:0;
+transition:.3s;
 }
 
-.overlay.active { top:0; }
+.social-menu:hover a::after{ opacity:1; }
 
-.overlay h2 { margin-bottom:20px; font-size:3em; color:#ff0000; text-shadow:0 0 10px #ff0000,0 0 20px #ff3333; text-align:center; }
 
-.language-switch { position:fixed; top:20px; right:20px; display:flex; gap:10px; z-index:10010; }
+/* PARALLAX */
 
-.language-switch button { background:black; color:#00ff00; border:2px solid #00ff00; padding:8px 14px; cursor:pointer; font-family:'Orbitron',sans-serif; transition:0.3s; }
-
-.language-switch button:hover { background:#00ff00; color:black; }
-
-.song-container { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:20px; margin:50px auto; max-width:1200px; }
-
-.song-button { flex:1 1 180px; min-width:180px; text-align:center; }
-
-.song-description { flex:2 1 400px; text-align:left; background:rgba(0,0,0,0.6); padding:20px; border-radius:12px; line-height:1.8; word-wrap: break-word; overflow-wrap: anywhere; }
-
-.song-cover { flex:1 1 200px; min-width:200px; transition:transform 0.3s ease; cursor:pointer; border:2px solid #00ff00; border-radius:12px; }
-
-.song-cover:hover { transform:scale(1.1); }
-
-/* DISCOVER improvements */
-.discography ul { list-style:none; padding:0; margin:0; }
-.discography li {
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  background:rgba(0,0,0,0.6);
-  padding:15px 20px;
-  margin-bottom:20px;
-  border-radius:12px;
-  gap:20px;
-  flex-wrap: wrap;
-}
-.discography li .disc-left { 
-  flex: 1 1 300px; 
-  text-align:left; 
-  word-break: break-word; 
-  overflow-wrap: anywhere; 
-  min-width: 250px;
-  margin-right:20px;
-}
-.discography li .disc-right { 
-  flex: 0 0 150px; 
-  text-align:right; 
-  min-width: 150px; 
-}
-.discography li .disc-right img { width:150px; border-radius:12px; max-width:100%; height:auto; }
-.discography li .disc-left .retro-button { display:block; margin-bottom:10px; }
-
-/* Overlay centrowanie i ograniczenie szerokości */
-.overlay .about-content { max-width:900px; width:90%; margin:0 auto; text-align:left; }
-
-/* responsywność */
-@media (max-width:768px) {
-  header{font-size:2.2em;} 
-  .retro-button{padding:18px 28px;font-size:0.9em;width:90%;max-width:320px;} 
-  .parallax{height:60vh;background-position:center top;} 
-  .overlay h2{font-size:2em;} 
-  .overlay p,.overlay ul li{font-size:1em;} 
-  .square-button{width:180px;height:180px;font-size:1em;} 
-  .note{max-width:95%;} 
-  .discography li { flex-direction:column; text-align:center; }
-  .discography li .disc-left, .discography li .disc-right { flex:1 1 100%; text-align:center; margin-right:0; }
-  .discography li .disc-right img { margin-top:10px; width:80%; max-width:200px; }
-}
-  .discography li {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap; /* pozwala na układ w kolumny na małych ekranach */
-  background: rgba(0,0,0,0.6);
-  padding: 15px 20px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  gap: 20px;
+.parallax{
+position:relative;
+width:100vw;
+height:120vh;
+background-image:url('strona,internetowa.png');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+border-top:2px solid rgba(255,0,0,0.3);
+border-bottom:2px solid rgba(0,255,0,0.3);
+transition:filter .5s ease;
+z-index:1;
 }
 
-.disc-left {
-  flex: 1 1 300px; /* zajmuje minimum 300px, elastycznie rośnie */
-  min-width: 250px;
-  text-align: left;
-  word-break: break-word;
-  overflow-wrap: anywhere;
-  margin-right: 20px;
+.blurred{ filter:blur(5px); }
+
+
+/* OVERLAY */
+
+.overlay{
+position:fixed;
+top:100%;
+left:0;
+width:100vw;
+height:100vh;
+background:rgba(0,0,0,0.95);
+display:flex;
+flex-direction:column;
+align-items:center;
+z-index:10000;
+padding:60px 20px;
+transition:top .8s ease;
+overflow-y:auto;
 }
 
-.disc-left .retro-button {
-  display: block;
-  margin-bottom: 10px;
-  word-wrap: break-word;
+.overlay.active{ top:0; }
+
+.overlay h2{
+margin-bottom:20px;
+font-size:3em;
+color:#ff0000;
+text-shadow:0 0 10px #ff0000,0 0 20px #ff3333;
 }
 
-.disc-right {
-  flex: 0 0 150px;
-  min-width: 150px;
-  text-align: center;
+
+/* LANGUAGE */
+
+.language-switch{
+position:fixed;
+top:20px;
+right:20px;
+display:flex;
+gap:10px;
+z-index:10010;
 }
 
-.disc-right img {
-  width: 100%;  /* dopasowanie do szerokości kontenera */
-  height: auto;
-  border-radius: 12px;
+.language-switch button{
+background:black;
+color:#00ff00;
+border:2px solid #00ff00;
+padding:8px 14px;
+cursor:pointer;
+font-family:'Orbitron',sans-serif;
 }
 
-/* responsywność */
-@media (max-width: 1024px) {
-  .discography li {
-    flex-wrap: wrap;
-  }
-  .disc-left, .disc-right {
-    flex: 1 1 100%; /* każdy element zajmuje pełną szerokość */
-    text-align: center;
-    margin-right: 0;
-  }
-  .disc-right img {
-    max-width: 200px;
-    margin: 10px auto 0 auto;
-  }
+.language-switch button:hover{
+background:#00ff00;
+color:black;
 }
 
-@media (max-width: 768px) {
-  header { font-size: 2em; }
-  .retro-button { font-size: 0.9em; padding: 15px 25px; }
-  .square-button { width: 180px; height: 180px; font-size: 1em; }
-  .overlay h2 { font-size: 1.8em; }
-  .overlay p, .overlay ul li { font-size: 0.95em; }
+
+/* DYSKOGRAFIA */
+
+.note{
+margin-bottom:40px;
 }
+
+.discography ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.discography li{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:30px;
+flex-wrap:wrap;
+background:rgba(0,0,0,0.6);
+padding:20px;
+margin-bottom:25px;
+border-radius:12px;
+}
+
+.disc-left{
+flex:0 0 250px;
+}
+
+.disc-middle{
+flex:1;
+text-align:left;
+line-height:1.7;
+}
+
+.disc-right{
+flex:0 0 150px;
+text-align:right;
+}
+
+.disc-right img{
+width:150px;
+border-radius:12px;
+}
+
+
+/* RESPONSYWNOŚĆ */
+
+@media (max-width:900px){
+
+header{font-size:2em;}
+
+.retro-button{
+font-size:0.9em;
+padding:15px 25px;
+}
+
+.square-button{
+width:180px;
+height:180px;
+font-size:1em;
+}
+
+.overlay h2{font-size:1.8em;}
+
+.discography li{
+flex-direction:column;
+text-align:center;
+}
+
+.disc-left,
+.disc-middle,
+.disc-right{
+flex:1 1 100%;
+text-align:center;
+}
+
+.disc-right img{
+margin-top:10px;
+max-width:200px;
+}
+
+}
+
 </style>
 </head>
 <body>
@@ -307,10 +331,13 @@ header {
 
 <main>
   <h2 class="fade-in">TRZPISU</h2>
-  <button class="retro-button" onclick="openFilm()">ODTWÓRZ NOWY KLIP</button>
-  <button class="square-button fade-in" onclick="openAbout()">ABOUT TRZPISU</button>
-</main>
 
+  <div class="main-buttons">
+    <button class="retro-button" onclick="openFilm()">ODTWÓRZ NOWY KLIP</button>
+    <button class="square-button fade-in" onclick="openAbout()">ABOUT TRZPISU</button>
+  </div>
+
+</main>
 <section class="parallax" id="parallax-bg"></section>
 
 <!-- Overlay About -->
@@ -327,58 +354,155 @@ header {
       <p><strong>Trzpisu</strong> is a 19-year-old independent artist from Podkarpacie, Poland, emerging strongly in 2025. He has quickly crafted a unique sound characterized by deep bass, immersive atmospheres, and bold experimentation.</p>
     </div>
 
-    <div class="discography note">
-      <h3>Discography</h3>
-      <ul>
-        <li>
-          <div class="disc-left">
-            <a href="https://distrokid.com/hyperfollow/trzpisu/whereyougoin" target="_blank" class="retro-button">SEE ON STREAMING PLATFORMS</a><br>
-            <strong>whereyougoin’</strong> - 05.09.2025<br>
-            Debut single blending trap, lo-fi, and urban sounds. Themes: independence, self-discovery, ambition.
-          </div>
-          <div class="disc-right">
-            <img src="whereyougoin-spotify.png" alt="WhereYouGoin' Cover">
-          </div>
-        </li>
-        <li>
-          <div class="disc-left">
-            <a href="https://distrokid.com/hyperfollow/trzpisu/redgreen" target="_blank" class="retro-button">SEE ON STREAMING PLATFORMS</a><br>
-            <strong>redgreen</strong> - 17.10.2025<br>
-            Second single with experimental electronic layers. Shows artistic growth and originality.
-          </div>
-          <div class="disc-right">
-            <img src="redgreen.jpeg" alt="RedGreen Cover">
-          </div>
-        </li>
-        <a href="https://distrokid.com/hyperfollow/trzpisu/definicja-artysty" target="_blank" class="retro-button">SEE ON STREAMING PLATFORMS</a><br>
-            <strong>definicja artysty</strong> - 12.12.2025<br>
-            Third single summarizing his debut year. Highlights authenticity, vision, and creative freedom.<br>
-            <img src="definicja artysty spotify.png" alt="Definicja Artysty Cover" style="width:150px; border-radius:12px; margin-top:5px;">
-          </li>
-          <li>
-            <a href="https://distrokid.com/hyperfollow/trzpisu/onitonit" target="_blank" class="retro-button">SEE ON STREAMING PLATFORMS</a><br>
-            <strong>ONITONIT</strong> – 30.01.2026<br>
-            Fourth single introducing a new freshness and a new wave. Signals a bold creative shift and sets the tone for the new year.<br>
-            <img src="ON IT.png" alt="ONITONIT Cover" style="width:150px; border-radius:12px; margin-top:5px;">
-          </li>
-          <li>
-            <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">SEE ON STREAMING PLATFORMS</a><br>
-            <strong>GREEN IDOL / GREEN TEA</strong> - album<br>
-            Dual-concept album: <strong>GREEN IDOL</strong> - ambitious & energetic, <strong>GREEN TEA</strong> - calm & reflective. Contrasts fame with personal authenticity.<br>
-            <img src="GREENIDOL,GREENTEA.spotify.png" alt="GREEN IDOL / GREEN TEA Cover" style="width:150px; border-radius:12px; margin-top:5px;">
-          </li>
-          <li>
-            <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">SEE ON STREAMING PLATFORMS</a><br>
-            <strong>GREEN IDOL</strong> - 06.03.2026<br>
-            Energetic single about identity, public image, and becoming an idol.<br>
-            <img src="GREENIDOL,GREENTEA.spotify.png" alt="GREEN IDOL Cover" style="width:150px; border-radius:12px; margin-top:5px;">
-          </li>
-          <li>
-            <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">SEE ON STREAMING PLATFORMS</a><br>
-            <strong>GREEN TEA</strong> - 06.03.2026<br>
-            Reflective single about clarity of mind, independence, and artistic balance.<br>
-            <img src="GREENIDOL,GREENTEA.spotify.png" alt="GREEN TEA Cover" style="width:150px; border-radius:12px; margin-top:5px;">
-                  </li>
+  <hr style="margin:50px 0; border:1px solid #00ff00;">
+
+<div class="discography note">
+<h3 style="margin-bottom:25px;">DISCOGRAPHY</h3>
+<li>
+
+<div class="disc-left">
+<a href="https://distrokid.com/hyperfollow/trzpisu/whereyougoin" target="_blank" class="retro-button">
+SEE ON STREAMING PLATFORMS
+</a>
+</div>
+
+<div class="disc-middle">
+<strong>whereyougoin’</strong> - 05.09.2025<br>
+Debut single blending trap, lo-fi, and urban sounds. Themes: independence, self-discovery, ambition.
+</div>
+
+<div class="disc-right">
+<img src="whereyougoin-spotify.png" alt="WhereYouGoin Cover">
+</div>
+
+</li>
+
+
+
+<li>
+
+<div class="disc-left">
+<a href="https://distrokid.com/hyperfollow/trzpisu/redgreen" target="_blank" class="retro-button">
+SEE ON STREAMING PLATFORMS
+</a>
+</div>
+
+<div class="disc-middle">
+<strong>redgreen</strong> - 17.10.2025<br>
+Second single with experimental electronic layers. Shows artistic growth and originality.
+</div>
+
+<div class="disc-right">
+<img src="redgreen.jpeg" alt="RedGreen Cover">
+</div>
+
+</li>
+
+
+
+<li>
+
+<div class="disc-left">
+<a href="https://distrokid.com/hyperfollow/trzpisu/definicja-artysty" target="_blank" class="retro-button">
+SEE ON STREAMING PLATFORMS
+</a>
+</div>
+
+<div class="disc-middle">
+<strong>definicja artysty</strong> - 12.12.2025<br>
+Third single summarizing his debut year. Highlights authenticity, vision, and creative freedom.
+</div>
+
+<div class="disc-right">
+<img src="definicja artysty spotify.png" alt="Definicja Artysty Cover">
+</div>
+
+</li>
+
+
+
+<li>
+
+<div class="disc-left">
+<a href="https://distrokid.com/hyperfollow/trzpisu/onitonit" target="_blank" class="retro-button">
+SEE ON STREAMING PLATFORMS
+</a>
+</div>
+
+<div class="disc-middle">
+<strong>ONITONIT</strong> – 30.01.2026<br>
+Fourth single introducing a new freshness and a new wave. Signals a bold creative shift and sets the tone for the new year.
+</div>
+
+<div class="disc-right">
+<img src="ON IT.png" alt="ONITONIT Cover">
+</div>
+
+</li>
+
+
+
+<li>
+
+<div class="disc-left">
+<a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">
+SEE ON STREAMING PLATFORMS
+</a>
+</div>
+
+<div class="disc-middle">
+<strong>GREEN IDOL / GREEN TEA</strong> - album<br>
+Dual-concept album: <strong>GREEN IDOL</strong> - ambitious & energetic, <strong>GREEN TEA</strong> - calm & reflective. Contrasts fame with personal authenticity.
+</div>
+
+<div class="disc-right">
+<img src="GREENIDOL,GREENTEA.spotify.png" alt="GREEN IDOL GREEN TEA Cover">
+</div>
+
+</li>
+
+
+
+<li>
+
+<div class="disc-left">
+<a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">
+SEE ON STREAMING PLATFORMS
+</a>
+</div>
+
+<div class="disc-middle">
+<strong>GREEN IDOL</strong> - 06.03.2026<br>
+Energetic single about identity, public image, and becoming an idol.
+</div>
+
+<div class="disc-right">
+<img src="GREENIDOL,GREENTEA.spotify.png" alt="GREEN IDOL Cover">
+</div>
+
+</li>
+
+
+
+<li>
+
+<div class="disc-left">
+<a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">
+SEE ON STREAMING PLATFORMS
+</a>
+</div>
+
+<div class="disc-middle">
+<strong>GREEN TEA</strong> - 06.03.2026<br>
+Reflective single about clarity of mind, independence, and artistic balance.
+</div>
+
+<div class="disc-right">
+<img src="GREENIDOL,GREENTEA.spotify.png" alt="GREEN TEA Cover">
+</div>
+
+</li>
+
       </ul>
   </div>
 
@@ -389,58 +513,158 @@ header {
       <p><strong>Trzpisu</strong> to 19-letni niezależny artysta z Podkarpacia, który w 2025 roku szybko buduje swoją muzyczną tożsamość. Jego brzmienie charakteryzuje się głębokimi basami, immersyjną atmosferą i odważnymi eksperymentami.</p>
     </div>
 
-    <div class="discography note">
-      <h3>Dyskografia</h3>
-      <ul>
-        <li>
-          <div class="disc-left">
-            <a href="https://distrokid.com/hyperfollow/trzpisu/whereyougoin" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a><br>
-            <strong>whereyougoin’</strong> - 05.09.2025<br>
-            Debiutancki singiel łączący trap, lo-fi i miejskie brzmienia. Tematy: niezależność, odkrywanie siebie, ambicja.
-          </div>
-          <div class="disc-right">
-            <img src="whereyougoin-spotify.png" alt="WhereYouGoin' Cover">
-          </div>
-        </li>
-        <li>
-          <div class="disc-left">
-            <a href="https://distrokid.com/hyperfollow/trzpisu/redgreen" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a><br>
-            <strong>redgreen</strong> - 17.10.2025<br>
-            Drugi singiel z warstwami eksperymentalnej elektroniki. Pokazuje rozwój artystyczny i oryginalność.
-          </div>
-          <div class="disc-right">
-            <img src="redgreen.jpeg" alt="RedGreen Cover">
-          </div>
-        </li>
-         <a href="https://distrokid.com/hyperfollow/trzpisu/definicja-artysty" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a><br>
-            <strong>definicja artysty</strong> - 12.12.2025<br>
-            Trzeci singiel podsumowujący debiutancki rok. Podkreśla autentyczność, wizję i wolność twórczą.<br>
-            <img src="definicja artysty spotify.png" alt="Definicja Artysty Cover" style="width:150px; border-radius:12px; margin-top:5px;">
-          </li>
-          <li>
-            <a href="https://distrokid.com/hyperfollow/trzpisu/onitonit" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a><br>
-            <strong>ONITONIT</strong> – 30.01.2026<br>
-            Czwarty singiel wprowadzający nową świeżość i nową falę. Sygnalizuje odważną zmianę kreatywną i nadaje ton na nowy rok.<br>
-            <img src="ON IT.png" alt="ONITONIT Cover" style="width:150px; border-radius:12px; margin-top:5px;">
-          </li>
-          <li>
-            <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a><br>
-            <strong>GREEN IDOL / GREEN TEA</strong> - album<br>
-            Album dual-konceptowy: <strong>GREEN IDOL</strong> - ambitny i energetyczny, <strong>GREEN TEA</strong> - spokojny i refleksyjny. Kontrast między sławą a autentycznością.<br>
-            <img src="GREENIDOL,GREENTEA.spotify.png" alt="GREEN IDOL / GREEN TEA Cover" style="width:150px; border-radius:12px; margin-top:5px;">
-          </li>
-          <li>
-            <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a><br>
-            <strong>GREEN IDOL</strong> - 06.03.2026<br>
-            Energetyczny singiel o tożsamości, wizerunku i drodze do bycia idolem.<br>
-            <img src="GREENIDOL,GREENTEA.spotify.png" alt="GREEN IDOL Cover" style="width:150px; border-radius:12px; margin-top:5px;">
-          </li>
-          <li>
-            <a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">ZOBACZ NA PLATFORMACH STREAMINGOWYCH</a><br>
-            <strong>GREEN TEA</strong> - 06.03.2026<br>
-            Refleksyjny singiel o klarowności umysłu, niezależności i balansie artystycznym.<br>
-            <img src="GREENIDOL,GREENTEA.spotify.png" alt="GREEN TEA Cover" style="width:150px; border-radius:12px; margin-top:5px;">
-          </li>
+   <hr style="margin:50px 0; border:1px solid #00ff00;">
+
+<div class="discography note">
+<h3 style="margin-bottom:25px;">DYSKOGRAFIAY</h3>
+
+<li>
+
+<div class="disc-left">
+<a href="https://distrokid.com/hyperfollow/trzpisu/whereyougoin" target="_blank" class="retro-button">
+ZOBACZ NA PLATFORMACH STREAMINGOWYCH
+</a>
+</div>
+
+<div class="disc-middle">
+<strong>whereyougoin’</strong> - 05.09.2025<br>
+Debiutancki singiel łączący trap, lo-fi i miejskie brzmienia. Utwór opowiada o niezależności, odkrywaniu własnej drogi i ambicji.
+</div>
+
+<div class="disc-right">
+<img src="whereyougoin-spotify.png" alt="WhereYouGoin Cover">
+</div>
+
+</li>
+
+
+
+<li>
+
+<div class="disc-left">
+<a href="https://distrokid.com/hyperfollow/trzpisu/redgreen" target="_blank" class="retro-button">
+ZOBACZ NA PLATFORMACH STREAMINGOWYCH
+</a>
+</div>
+
+<div class="disc-middle">
+<strong>redgreen</strong> - 17.10.2025<br>
+Drugi singiel z eksperymentalnymi warstwami elektronicznymi. Pokazuje rozwój artystyczny i oryginalne podejście do brzmienia.
+</div>
+
+<div class="disc-right">
+<img src="redgreen.jpeg" alt="RedGreen Cover">
+</div>
+
+</li>
+
+
+
+<li>
+
+<div class="disc-left">
+<a href="https://distrokid.com/hyperfollow/trzpisu/definicja-artysty" target="_blank" class="retro-button">
+ZOBACZ NA PLATFORMACH STREAMINGOWYCH
+</a>
+</div>
+
+<div class="disc-middle">
+<strong>definicja artysty</strong> - 12.12.2025<br>
+Trzeci singiel podsumowujący debiutancki rok. Podkreśla autentyczność, wizję i wolność twórczą.
+</div>
+
+<div class="disc-right">
+<img src="definicja artysty spotify.png" alt="Definicja Artysty Cover">
+</div>
+
+</li>
+
+
+
+<li>
+
+<div class="disc-left">
+<a href="https://distrokid.com/hyperfollow/trzpisu/onitonit" target="_blank" class="retro-button">
+ZOBACZ NA PLATFORMACH STREAMINGOWYCH
+</a>
+</div>
+
+<div class="disc-middle">
+<strong>ONITONIT</strong> – 30.01.2026<br>
+Czwarty singiel wprowadzający nową świeżość i nową falę. Zapowiada nowy kierunek twórczy i energię na kolejny rok.
+</div>
+
+<div class="disc-right">
+<img src="ON IT.png" alt="ONITONIT Cover">
+</div>
+
+</li>
+
+
+
+<li>
+
+<div class="disc-left">
+<a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">
+ZOBACZ NA PLATFORMACH STREAMINGOWYCH
+</a>
+</div>
+
+<div class="disc-middle">
+<strong>GREEN IDOL / GREEN TEA</strong> - album<br>
+Album o podwójnej koncepcji: <strong>GREEN IDOL</strong> – ambitny i energetyczny, <strong>GREEN TEA</strong> – spokojny i refleksyjny. Kontrast między sławą a autentycznością.
+</div>
+
+<div class="disc-right">
+<img src="GREENIDOL,GREENTEA.spotify.png" alt="GREEN IDOL GREEN TEA Cover">
+</div>
+
+</li>
+
+
+
+<li>
+
+<div class="disc-left">
+<a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">
+ZOBACZ NA PLATFORMACH STREAMINGOWYCH
+</a>
+</div>
+
+<div class="disc-middle">
+<strong>GREEN IDOL</strong> - 06.03.2026<br>
+Energetyczny singiel o tożsamości, wizerunku publicznym i drodze do stania się idolem.
+</div>
+
+<div class="disc-right">
+<img src="GREENIDOL,GREENTEA.spotify.png" alt="GREEN IDOL Cover">
+</div>
+
+</li>
+
+
+
+<li>
+
+<div class="disc-left">
+<a href="https://distrokid.com/hyperfollow/trzpisu/green-idol--green-tea" target="_blank" class="retro-button">
+ZOBACZ NA PLATFORMACH STREAMINGOWYCH
+</a>
+</div>
+
+<div class="disc-middle">
+<strong>GREEN TEA</strong> - 06.03.2026<br>
+Refleksyjny singiel o klarowności umysłu, niezależności i artystycznej równowadze.
+</div>
+
+<div class="disc-right">
+<img src="GREENIDOL,GREENTEA.spotify.png" alt="GREEN TEA Cover">
+</div>
+
+</li>
+
+</ul>
+         
   </div>
 
   <button class="retro-button" onclick="closeAbout()">ZAMKNIJ</button>
