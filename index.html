@@ -54,7 +54,6 @@ transition:.3s;
 cursor:pointer;
 margin:20px 0;
 display:inline-flex;
-word-wrap:break-word;
 }
 
 .retro-button:hover{
@@ -86,7 +85,7 @@ box-shadow:0 0 50px #ff0000;
 transform:scale(1.05);
 }
 
-/* PRZYCISKI NA GÓRZE */
+/* MAIN BUTTONS */
 .main-buttons{
 display:flex;
 justify-content:center;
@@ -163,7 +162,7 @@ background:#00ff00;
 color:black;
 }
 
-/* DYSKOGRAFIA */
+/* DISCOGRAPHY */
 .note{margin-bottom:40px;}
 
 .discography ul{
@@ -193,8 +192,9 @@ width:150px;
 border-radius:12px;
 }
 
-/* RESPONSYWNOŚĆ */
+/* RESPONSIVE */
 @media (max-width:900px){
+
 header{font-size:2em;}
 
 .retro-button{
@@ -226,44 +226,8 @@ max-width:200px;
 }
 }
 
-.spotify-section{
-max-width:900px;
-margin:auto;
-padding:20px;
-}
-
-.spotify-embeds{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.spotify-embeds iframe{
-flex:1 1 400px;
-max-width:450px;
-}
-
-main{
-max-width:1000px;
-margin:auto;
-padding:20px;
-}
-
-.contact-item img{
-width:50px;
-cursor:pointer;
-margin-top:15px;
-}
-
-footer{
-margin-top:80px;
-padding:20px;
-font-size:0.7em;
-}
-
 /* ========================= */
-/* 💥 FIXED SOCIAL MENU 💥 */
+/* 💥 SOCIAL MENU FIXED 💥 */
 /* ========================= */
 
 .social-menu{
@@ -277,25 +241,25 @@ display:flex;
 flex-direction:column;
 gap:15px;
 z-index:10001;
-overflow:hidden;
 transition:width .3s;
 box-shadow:0 0 20px #ff0000;
+overflow:visible;
 }
 
-/* lewa strona */
+/* lewa */
 .social-menu{
 left:0;
 border-radius:0 10px 10px 0;
 }
 
-/* prawa strona */
+/* prawa */
 .social-menu.right{
 left:auto;
 right:0;
 border-radius:10px 0 0 10px;
 }
 
-/* hover rozwinięcie */
+/* hover */
 .social-menu:hover{
 width:260px;
 }
@@ -324,7 +288,7 @@ color:#00ff00;
 opacity:1;
 }
 
-/* napis nad menu */
+/* NAPIS NAD MENU */
 .social-menu::before{
 content:"OBSERWUJ SOCIALE TRZPISU RECORDS";
 position:absolute;
@@ -332,13 +296,8 @@ top:-45px;
 left:10px;
 font-size:0.6em;
 color:#00ff00;
-opacity:0;
-transition:.3s;
 white-space:nowrap;
 text-shadow:0 0 5px #00ff00;
-}
-
-.social-menu:hover::before{
 opacity:1;
 }
 
