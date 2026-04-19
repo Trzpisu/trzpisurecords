@@ -375,6 +375,25 @@ left:auto;
 right:10px;
 text-align:right;
 }
+  .spotify-section{
+max-width:900px;
+margin:80px auto;
+padding:20px;
+text-align:center;
+}
+
+.spotify-embeds{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+}
+
+.spotify-embeds iframe{
+flex:1 1 400px;
+max-width:450px;
+}
 </style>
 </head>
 <body>
@@ -401,15 +420,24 @@ text-align:right;
 
 <header class="neon-header">TO JEST ZIOM !!!</header>
 
-<section class="spotify-section">
-<h2 style="margin-bottom:30px;">OSTATNIE UTWORY Z ALBUMU<br>GREEN IDOL / GREEN TEA</h2>
-<div class="spotify-embeds">
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/49nHBnCzW4MVnUQsO5wVLk?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/32dAySdaPuyOOHkdtIk4sc?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-</div>
-<a href="https://open.spotify.com/artist/5cKkMWjvTyLSTiak2USzst" target="_blank" class="retro-button">ZAPISZ NA SPOTIFY</a>
-</section>
+<div class="spotify-section">
+  <div class="spotify-embeds">
 
+    <iframe style="border-radius:12px"
+      src="https://open.spotify.com/embed/artist/5cKkMWjvTyLSTiak2USzst"
+      width="100%" height="352"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+
+    <iframe style="border-radius:12px"
+      src="https://open.spotify.com/embed/track/6rqhFgbbKwnb9MLmUQDhG6"
+      width="100%" height="352"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+
+  </div>
 <main>
   <h2 class="fade-in">TRZPISU</h2>
 
