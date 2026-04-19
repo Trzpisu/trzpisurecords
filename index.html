@@ -93,6 +93,23 @@ align-items:center;
 gap:40px;
 flex-wrap:wrap;
 margin-top:40px;
+width:100%;
+text-align:center;
+}
+
+/* wyrównanie przycisków */
+.retro-button,
+.square-button{
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+margin:0;
+}
+
+/* dodatkowe zabezpieczenie */
+.retro-button{
+vertical-align:middle;
 }
 
 /* PARALLAX */
@@ -410,6 +427,30 @@ justify-content:center;
 .spotify-embeds iframe{
 flex:1 1 400px;
 max-width:450px;
+}
+  .typewriter-title{
+font-family:'Press Start 2P', monospace;
+font-size:1.2em;        /* 🔥 większy tekst */
+color:#00ff00;
+margin-bottom:50px;     /* 🔥 więcej miejsca od Spotify */
+margin-top:20px;        /* 🔥 trochę wyżej “od góry sekcji” */
+white-space:nowrap;
+overflow:hidden;
+border-right:2px solid #00ff00;
+width:0;
+animation:typing 4s steps(50,end) forwards, blink .7s infinite;
+text-shadow:0 0 15px #00ff00;
+}
+
+/* animacja pisania */
+@keyframes typing{
+from{width:0;}
+to{width:100%;}
+}
+
+/* migający kursor */
+@keyframes blink{
+50%{border-color:transparent;}
 }
 </style>
 </head>
