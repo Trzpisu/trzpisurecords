@@ -343,7 +343,23 @@ gap:40px;
 flex-wrap:wrap;
 margin-top:40px;
 }
+.social-menu.right{
+left:auto;
+right:0;
+border-radius:10px 0 0 10px;
+}
 
+/* tekst wysuwa się w lewo (lustro) */
+.social-menu.right a::after{
+margin-left:0;
+margin-right:10px;
+order:-1;
+}
+
+/* opcjonalnie – lekko inny glow żeby odróżnić strony */
+.social-menu.right{
+box-shadow:0 0 15px #ff0000;
+}
 </style>
 </head>
 <body>
@@ -359,6 +375,13 @@ margin-top:40px;
     <a href="https://soundcloud.com/OHVJPhq5q2oXRJFPfq" target="_blank" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a>
     <a href="https://tiktok.com/@trzpisu.records" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
   </div>
+  <div class="social-menu right">
+
+  <a href="https://www.instagram.com/trzpisu/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://tiktok.com/@trzpisu" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+ <a href="https://x.com/trzpisu" target="_blank" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+<a href="https://www.facebook.com/profile.php?id=100078247153643" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+</div>
 </nav>
 
 <header class="neon-header">TO JEST ZIOM !!!</header>
@@ -662,7 +685,7 @@ function showLanguage(lang) {
 <script>
 function openFilm() {
   document.getElementById('parallax-bg').classList.add('blurred');
- window.location.href = "https://www.youtube.com/watch?v=abc123XYZ";
+ window.location.href = "";
 }
 function openAbout() {
   document.getElementById('parallax-bg').classList.add('blurred');
