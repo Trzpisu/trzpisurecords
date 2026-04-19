@@ -343,87 +343,9 @@ gap:40px;
 flex-wrap:wrap;
 margin-top:40px;
 }
-.social-menu.right{
-left:auto;
-right:0;
-border-radius:10px 0 0 10px;
-}
-
-/* tekst wysuwa się w lewo (lustro) */
 .social-menu{
 position:fixed;
 top:50%;
-transform:translateY(-50%);
-background:rgba(0,0,0,0.6);
-padding:10px;
-width:60px;
-display:flex;
-flex-direction:column;
-gap:15px;
-z-index:10001;
-overflow:hidden;
-transition:width .3s;
-}
-
-.social-menu:hover{
-width:260px;
-}
-
-/* linki – IKONKI ZAWSZE WIDOCZNE */
-.social-menu a{
-display:flex;
-align-items:center;
-color:#00ff00;
-font-size:1.2em;
-padding:10px;
-text-decoration:none;
-white-space:nowrap;
-}
-
-/* tekst ukryty domyślnie */
-.social-menu a::after{
-content:attr(aria-label);
-margin-left:10px;
-opacity:0;
-transition:.3s;
-color:#00ff00;
-}
-
-/* pokaz tekstu przy hover */
-.social-menu:hover a::after{
-opacity:1;
-}
-
-/* opcjonalnie – lekko inny glow żeby odróżnić strony */
-.social-menu{
-box-shadow:0 0 15px #ff0000;
-}
-  .social-menu::before{
-content:"OBSERWUJ SOCIALE TRZPISU RECORDS";
-position:absolute;
-top:-30px;
-left:10px;
-font-size:0.6em;
-opacity:0;
-transition:.3s;
-white-space:nowrap;
-color:#00ff00;
-}
-
-.social-menu:hover::before{
-opacity:1;
-}
-
-.social-menu.right::before{
-content:"OBSERWUJ SOCIALE TRZPISU";
-left:auto;
-right:10px;
-text-align:right;
-}
-  .social-menu{
-position:fixed;
-top:50%;
-left:0;
 transform:translateY(-50%);
 background:rgba(0,0,0,0.6);
 padding:10px;
@@ -435,7 +357,6 @@ z-index:10001;
 overflow:hidden;
 transition:width .3s;
 box-shadow:0 0 20px #ff0000;
-position:relative;
 }
 
 /* prawa strona (lustro) */
@@ -461,7 +382,7 @@ text-decoration:none;
 white-space:nowrap;
 }
 
-/* tekst sociali */
+/* tekst przy ikonach */
 .social-menu a::after{
 content:attr(aria-label);
 margin-left:10px;
@@ -475,7 +396,7 @@ color:#00ff00;
 opacity:1;
 }
 
-/* 🔥 NAPIS NAD LEWĄ STRONĄ */
+/* NAPIS NAD MENU */
 .social-menu::before{
 content:"OBSERWUJ SOCIALE TRZPISU RECORDS";
 position:absolute;
@@ -489,13 +410,13 @@ white-space:nowrap;
 text-shadow:0 0 5px #00ff00;
 }
 
-/* pokaz napisu */
+/* pokaż napis */
 .social-menu:hover::before{
 opacity:1;
 top:-40px;
 }
 
-/* 🔥 PRAWA STRONA NAPIS */
+/* prawa strona napis */
 .social-menu.right::before{
 content:"OBSERWUJ SOCIALE TRZPISU";
 left:auto;
