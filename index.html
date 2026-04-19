@@ -360,6 +360,33 @@ order:-1;
 .social-menu.right{
 box-shadow:0 0 15px #ff0000;
 }
+  /* NAPIS NAD SOCIALAMI */
+.social-menu::before{
+content:"OBSERWUJ SOCIALE TRZPISU RECORDS";
+position:absolute;
+top:-40px;
+left:10px;
+color:#00ff00;
+font-size:0.6em;
+opacity:0;
+transition:.3s;
+white-space:nowrap;
+}
+
+/* pokaż napis przy hover */
+.social-menu:hover::before{
+opacity:1;
+top:-30px;
+}
+
+
+/* PRAWA STRONA – inny tekst */
+.social-menu.right::before{
+content:"OBSERWUJ SOCIALE TRZPISU";
+left:auto;
+right:10px;
+text-align:right;
+}
 </style>
 </head>
 <body>
