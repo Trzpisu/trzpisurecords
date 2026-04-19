@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -25,9 +24,7 @@ background:#0e0e0e;
 overflow-x:hidden;
 }
 
-
 /* HEADER */
-
 header{
 font-size:4em;
 margin-bottom:40px;
@@ -43,9 +40,7 @@ from{ text-shadow:0 0 5px #39ff14,0 0 10px #00ffcc; }
 to{ text-shadow:0 0 20px #00ffcc,0 0 40px #39ff14; }
 }
 
-
 /* PRZYCISKI */
-
 .retro-button{
 font-family:'Press Start 2P', monospace;
 background:linear-gradient(to right,#ff0000,#00ff00);
@@ -67,7 +62,6 @@ background:black;
 color:#00ff00;
 box-shadow:0 0 40px #ff0000;
 }
-
 
 .square-button{
 display:inline-flex;
@@ -92,61 +86,17 @@ box-shadow:0 0 50px #ff0000;
 transform:scale(1.05);
 }
 
-
 /* PRZYCISKI NA GÓRZE */
-
 .main-buttons{
 display:flex;
 justify-content:center;
 align-items:center;
-gap:30px;
+gap:40px;
 flex-wrap:wrap;
-margin-top:20px;
+margin-top:40px;
 }
-
-
-/* SOCIAL MENU */
-
-.social-menu{
-position:fixed;
-top:50%;
-left:0;
-transform:translateY(-50%);
-background:rgba(0,0,0,0.6);
-padding:10px;
-border-radius:0 10px 10px 0;
-width:60px;
-transition:width .3s;
-display:flex;
-flex-direction:column;
-gap:15px;
-z-index:10001;
-}
-
-.social-menu:hover{ width:260px; }
-
-.social-menu a{
-display:flex;
-align-items:center;
-color:#00ff00;
-font-size:1.2em;
-padding:10px;
-text-decoration:none;
-}
-
-.social-menu a::after{
-content:attr(aria-label);
-color:#00ff00;
-margin-left:10px;
-opacity:0;
-transition:.3s;
-}
-
-.social-menu:hover a::after{ opacity:1; }
-
 
 /* PARALLAX */
-
 .parallax{
 position:relative;
 width:100vw;
@@ -163,9 +113,7 @@ z-index:1;
 
 .blurred{ filter:blur(5px); }
 
-
 /* OVERLAY */
-
 .overlay{
 position:fixed;
 top:100%;
@@ -191,9 +139,7 @@ color:#ff0000;
 text-shadow:0 0 10px #ff0000,0 0 20px #ff3333;
 }
 
-
 /* LANGUAGE */
-
 .language-switch{
 position:fixed;
 top:20px;
@@ -217,12 +163,8 @@ background:#00ff00;
 color:black;
 }
 
-
 /* DYSKOGRAFIA */
-
-.note{
-margin-bottom:40px;
-}
+.note{margin-bottom:40px;}
 
 .discography ul{
 list-style:none;
@@ -242,31 +184,17 @@ margin-bottom:25px;
 border-radius:12px;
 }
 
-.disc-left{
-flex:0 0 250px;
-}
-
-.disc-middle{
-flex:1;
-text-align:left;
-line-height:1.7;
-}
-
-.disc-right{
-flex:0 0 150px;
-text-align:right;
-}
+.disc-left{flex:0 0 250px;}
+.disc-middle{flex:1;text-align:left;line-height:1.7;}
+.disc-right{flex:0 0 150px;text-align:right;}
 
 .disc-right img{
 width:150px;
 border-radius:12px;
 }
 
-
 /* RESPONSYWNOŚĆ */
-
 @media (max-width:900px){
-
 header{font-size:2em;}
 
 .retro-button{
@@ -287,9 +215,7 @@ flex-direction:column;
 text-align:center;
 }
 
-.disc-left,
-.disc-middle,
-.disc-right{
+.disc-left,.disc-middle,.disc-right{
 flex:1 1 100%;
 text-align:center;
 }
@@ -298,9 +224,9 @@ text-align:center;
 margin-top:10px;
 max-width:200px;
 }
-
 }
-  .spotify-section{
+
+.spotify-section{
 max-width:900px;
 margin:auto;
 padding:20px;
@@ -335,14 +261,11 @@ margin-top:80px;
 padding:20px;
 font-size:0.7em;
 }
-  .main-buttons{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:40px;
-flex-wrap:wrap;
-margin-top:40px;
-}
+
+/* ========================= */
+/* 💥 FIXED SOCIAL MENU 💥 */
+/* ========================= */
+
 .social-menu{
 position:fixed;
 top:50%;
@@ -359,14 +282,20 @@ transition:width .3s;
 box-shadow:0 0 20px #ff0000;
 }
 
-/* prawa strona (lustro) */
+/* lewa strona */
+.social-menu{
+left:0;
+border-radius:0 10px 10px 0;
+}
+
+/* prawa strona */
 .social-menu.right{
 left:auto;
 right:0;
 border-radius:10px 0 0 10px;
 }
 
-/* rozwijanie */
+/* hover rozwinięcie */
 .social-menu:hover{
 width:260px;
 }
@@ -382,7 +311,7 @@ text-decoration:none;
 white-space:nowrap;
 }
 
-/* tekst przy ikonach */
+/* tekst */
 .social-menu a::after{
 content:attr(aria-label);
 margin-left:10px;
@@ -391,16 +320,15 @@ transition:.3s;
 color:#00ff00;
 }
 
-/* pokaz tekstu */
 .social-menu:hover a::after{
 opacity:1;
 }
 
-/* NAPIS NAD MENU */
+/* napis nad menu */
 .social-menu::before{
 content:"OBSERWUJ SOCIALE TRZPISU RECORDS";
 position:absolute;
-top:-30px;
+top:-45px;
 left:10px;
 font-size:0.6em;
 color:#00ff00;
@@ -410,10 +338,8 @@ white-space:nowrap;
 text-shadow:0 0 5px #00ff00;
 }
 
-/* pokaż napis */
 .social-menu:hover::before{
 opacity:1;
-top:-40px;
 }
 
 /* prawa strona napis */
