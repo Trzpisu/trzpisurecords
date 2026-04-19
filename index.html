@@ -350,37 +350,70 @@ border-radius:10px 0 0 10px;
 }
 
 /* tekst wysuwa się w lewo (lustro) */
-.social-menu.right a::after{
-margin-left:0;
-margin-right:10px;
-order:-1;
+.social-menu{
+position:fixed;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.6);
+padding:10px;
+width:60px;
+display:flex;
+flex-direction:column;
+gap:15px;
+z-index:10001;
+overflow:hidden;
+transition:width .3s;
+}
+
+.social-menu:hover{
+width:260px;
+}
+
+/* linki – IKONKI ZAWSZE WIDOCZNE */
+.social-menu a{
+display:flex;
+align-items:center;
+color:#00ff00;
+font-size:1.2em;
+padding:10px;
+text-decoration:none;
+white-space:nowrap;
+}
+
+/* tekst ukryty domyślnie */
+.social-menu a::after{
+content:attr(aria-label);
+margin-left:10px;
+opacity:0;
+transition:.3s;
+color:#00ff00;
+}
+
+/* pokaz tekstu przy hover */
+.social-menu:hover a::after{
+opacity:1;
 }
 
 /* opcjonalnie – lekko inny glow żeby odróżnić strony */
 .social-menu.right{
 box-shadow:0 0 15px #ff0000;
 }
-  /* NAPIS NAD SOCIALAMI */
-.social-menu::before{
+  .social-menu::before{
 content:"OBSERWUJ SOCIALE TRZPISU RECORDS";
 position:absolute;
-top:-40px;
+top:-30px;
 left:10px;
-color:#00ff00;
 font-size:0.6em;
 opacity:0;
 transition:.3s;
 white-space:nowrap;
+color:#00ff00;
 }
 
-/* pokaż napis przy hover */
 .social-menu:hover::before{
 opacity:1;
-top:-30px;
 }
 
-
-/* PRAWA STRONA – inny tekst */
 .social-menu.right::before{
 content:"OBSERWUJ SOCIALE TRZPISU";
 left:auto;
