@@ -430,25 +430,29 @@ max-width:450px;
 }
   .typewriter-title{
 font-family:'Press Start 2P', monospace;
-font-size:1.2em;        /* 🔥 większy tekst */
+font-size:1.2em;
 color:#00ff00;
-margin-bottom:50px;     /* 🔥 więcej miejsca od Spotify */
-margin-top:20px;        /* 🔥 trochę wyżej “od góry sekcji” */
-white-space:nowrap;
-overflow:hidden;
-border-right:2px solid #00ff00;
-width:0;
-animation:typing 4s steps(50,end) forwards, blink .7s infinite;
+margin-bottom:50px;
+margin-top:20px;
 text-shadow:0 0 15px #00ff00;
+
+/* 🔥 KLUCZ: NIE UCINA */
+white-space:normal;
+overflow:hidden;
+display:inline-block;
+
+/* animacja pisania znak po znaku */
+width:0;
+animation:typing 4.5s steps(60,end) forwards, blink .7s infinite;
+border-right:2px solid #00ff00;
 }
 
-/* animacja pisania */
+/* 🔥 ważne: SZERSZY LIMIT */
 @keyframes typing{
 from{width:0;}
 to{width:100%;}
 }
 
-/* migający kursor */
 @keyframes blink{
 50%{border-color:transparent;}
 }
