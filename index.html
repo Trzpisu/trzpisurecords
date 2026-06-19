@@ -524,11 +524,7 @@ to{width:100%;}
     <button onclick="setLang('pl')">PL</button>
   </div>
 
-<!-- LANGUAGE SWITCH -->
-<div class="language-switch">
-  <button onclick="showLanguage('en')">EN</button>
-  <button onclick="showLanguage('pl')">PL</button>
-</div>
+
 
 <!-- ENGLISH SECTION -->
 <div id="en" class="about-content" style="display:block;">
@@ -674,7 +670,9 @@ to{width:100%;}
     <img src="dontbecommon.spotify.png" alt="DON'T BE COMMON Cover">
   </div>
 </li>
-
+</ul>
+</div>
+</div>
 <!-- POLISH SECTION -->
 <div id="pl" class="about-content" style="display:none;">
   <h2>TRZPISU</h2>
@@ -869,8 +867,6 @@ function openFilm() {
 function openAbout() {
   document.getElementById('parallax-bg').classList.add('blurred');
   document.getElementById('about-overlay').classList.add('active');
-  document.getElementById('en').style.display = 'block';
-  document.getElementById('pl').style.display = 'none';
 }
 function closeAbout() {
   document.getElementById('parallax-bg').classList.remove('blurred');
